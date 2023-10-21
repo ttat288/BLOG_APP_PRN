@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jeMoz5wmM8z+fh6LfWvTj91gxlDm0ga464DZeZnqcFTkSLQE81GTU5cHevOJ+Wfo53Jmhc8c8BHhlyAZq1kJrQ==",
+  "success": true,
+  "projectFilePath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\Assignment_PRN_Team.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\krypton.toolkit\\70.22.11.312\\krypton.toolkit.70.22.11.312.nupkg.sha512"
+  ],
+  "logs": []
+}
