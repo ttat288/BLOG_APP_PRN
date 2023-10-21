@@ -96,9 +96,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\Assignment_PRN_Team.csproj",
-      "projectName": "Assignment_PRN_Team",
-      "projectPath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\Assignment_PRN_Team.csproj",
+      "projectUniqueName": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\BlogWinApp.csproj",
+      "projectName": "BlogWinApp",
+      "projectPath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\BlogWinApp.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
       "outputPath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\Assignment_PRN_Team\\obj\\",
       "projectStyle": "PackageReference",

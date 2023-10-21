@@ -1,0 +1,43 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "FontAwesome.Sharp/6.1.1": {
+        "runtime": {
+          "lib/net5.0-windows7.0/FontAwesome.Sharp.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "Krypton.Toolkit/70.22.11.312": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Krypton.Toolkit.dll": {
+            "assemblyVersion": "70.22.11.312",
+            "fileVersion": "70.22.11.312"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FontAwesome.Sharp/6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p6dnSMcKQg790vGSJgvFk6S8gXQnEcCugfaJ21WFxZz9h+9KyxL+sX6kbGv8p4iVoX/e5BAMnTV4QJFJvx8QxQ==",
+      "path": "fontawesome.sharp/6.1.1",
+      "hashPath": "fontawesome.sharp.6.1.1.nupkg.sha512"
+    },
+    "Krypton.Toolkit/70.22.11.312": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0IumXFg5+4RivvUs5oLLJWayUoPwu7QT8GIdGJYkZkuzwJ4D/JdwDNFYkPGFseY58wxhfErV8f+n0/SF6SGUTw==",
+      "path": "krypton.toolkit/70.22.11.312",
+      "hashPath": "krypton.toolkit.70.22.11.312.nupkg.sha512"
+    }
+  }
+}
