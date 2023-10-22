@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            panel1 = new System.Windows.Forms.Panel();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label1 = new System.Windows.Forms.Label();
             lblEmail = new System.Windows.Forms.Label();
             lblPassword = new System.Windows.Forms.Label();
             txtEmail = new System.Windows.Forms.TextBox();
             txtPassword = new System.Windows.Forms.TextBox();
             checkBox1 = new System.Windows.Forms.CheckBox();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            loginBtn = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconEmail = new FontAwesome.Sharp.IconButton();
             iconPassword = new FontAwesome.Sharp.IconButton();
@@ -45,45 +43,17 @@
             btnClose = new FontAwesome.Sharp.IconButton();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(iconPictureBox1);
-            panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            panel1.Location = new System.Drawing.Point(417, 0);
-            panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(308, 465);
-            panel1.TabIndex = 2;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(0, 64, 64);
-            iconPictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("iconPictureBox1.BackgroundImage");
-            iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 305;
-            iconPictureBox1.Location = new System.Drawing.Point(3, 0);
-            iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new System.Drawing.Size(305, 465);
-            iconPictureBox1.TabIndex = 3;
-            iconPictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Showcard Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            label1.Location = new System.Drawing.Point(120, 62);
+            label1.Location = new System.Drawing.Point(142, 62);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(131, 47);
             label1.TabIndex = 3;
@@ -150,24 +120,24 @@
             checkBox1.Text = "Remember me";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // iconButton1
+            // loginBtn
             // 
-            iconButton1.BackColor = System.Drawing.Color.Teal;
-            iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            iconButton1.Font = new System.Drawing.Font("UD Digi Kyokasho NK-B", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            iconButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = System.Drawing.Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new System.Drawing.Point(70, 280);
-            iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new System.Drawing.Size(252, 44);
-            iconButton1.TabIndex = 9;
-            iconButton1.Text = "Login";
-            iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click;
+            loginBtn.BackColor = System.Drawing.Color.Teal;
+            loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            loginBtn.Font = new System.Drawing.Font("UD Digi Kyokasho NK-B", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            loginBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            loginBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            loginBtn.IconColor = System.Drawing.Color.Black;
+            loginBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            loginBtn.Location = new System.Drawing.Point(70, 280);
+            loginBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new System.Drawing.Size(252, 44);
+            loginBtn.TabIndex = 9;
+            loginBtn.Text = "Login";
+            loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += loginBtn_Click;
             // 
             // iconButton2
             // 
@@ -244,6 +214,7 @@
             btnClose.Size = new System.Drawing.Size(32, 40);
             btnClose.TabIndex = 0;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // label2
             // 
@@ -265,6 +236,16 @@
             label3.TabIndex = 15;
             label3.Text = "label3";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Location = new System.Drawing.Point(420, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(305, 449);
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -273,20 +254,20 @@
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             ClientSize = new System.Drawing.Size(725, 465);
             ControlBox = false;
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(iconPassword);
             Controls.Add(iconEmail);
             Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
+            Controls.Add(loginBtn);
             Controls.Add(checkBox1);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(label1);
-            Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             MaximumSize = new System.Drawing.Size(725, 465);
@@ -294,23 +275,20 @@
             Name = "frmLogin";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmLogin";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox checkBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton loginBtn;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconEmail;
         private FontAwesome.Sharp.IconButton iconPassword;
@@ -318,5 +296,6 @@
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

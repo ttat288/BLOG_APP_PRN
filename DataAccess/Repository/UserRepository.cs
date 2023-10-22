@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    internal class UserRepository
+    public class UserRepository : IUserRepository
     {
+        public string img()
+        {
+            return UserDAO.Instance.img();
+        }
+
+        public bool Login(string mail, string pass)
+        {
+            return UserDAO.Instance.Login(mail, pass);
+        }
     }
 }

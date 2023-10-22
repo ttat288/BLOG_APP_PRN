@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
+        public string img();
+        public bool Login(string mail, string pass);
     }
 }

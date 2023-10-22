@@ -1,0 +1,11 @@
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\bin\Debug\net5.0\BlogObject.deps.json
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\bin\Debug\net5.0\BlogObject.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\bin\Debug\net5.0\BlogObject.pdb
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.AssemblyInfoInputs.cache
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.AssemblyInfo.cs
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.csproj.CoreCompileInputs.cache
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\refint\BlogObject.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.pdb
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\ref\BlogObject.dll

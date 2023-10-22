@@ -164,7 +164,7 @@
             // 
             // panel8
             // 
-            panel8.BackgroundImage = Properties.Resources.logo1;
+            panel8.BackgroundImage = BlogWinApp.Properties.Resources.logo1;
             panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             panel8.Location = new System.Drawing.Point(3, 3);
             panel8.Name = "panel8";
