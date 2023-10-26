@@ -71,4 +71,3 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\run
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\appsettings.json
-D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmLoginTemp.resources

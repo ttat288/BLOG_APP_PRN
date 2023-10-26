@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assignment_PRN_Team"
+    "\\Assignment_PRN_Team",
+    "\\DataAccess",
+    "\\RichTextEditor"
   ],
-  "SelectedNode": "\\Assignment_PRN_Team\\frmLogin.cs",
+  "SelectedNode": "\\RichTextEditor\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

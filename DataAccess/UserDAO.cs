@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlogObject;
 
 namespace DataAccess
 {
@@ -30,8 +31,11 @@ namespace DataAccess
             }
         }
         //============================================
+        string Email, Pass;
+
+
         //---Login
-        public bool Login(string mail, string pass)
+        public bool Login(string mail, string pass,bool rem)
         {
             using (var context = new MyDbContext())
             {
@@ -42,6 +46,9 @@ namespace DataAccess
                     // Kiểm tra mật khẩu
                     if (user.password == pass)
                     {
+                        Account.Instance.Remember = rem;
+                        Account.Instance.Email = user.mail;
+                        Account.Instance.Pass = user.password;
                         // Đăng nhập thành công
                         return true;
                     }
@@ -58,36 +65,10 @@ namespace DataAccess
             }
         }
 
-
-
-
-        //test
-        public string img()
+        public Account remember()
         {
-            string pathImg = "";
-            using (var context = new MyDbContext())
-            {
-                var users = context.UserTb.ToList();
-
-                var user = users.FirstOrDefault(u => u.id == "SE171871");
-
-                if (user != null)
-                {
-                    string avatarPath = user.avatar;
-
-                    if (!string.IsNullOrEmpty(avatarPath))
-                    {
-                        pathImg = avatarPath;
-                    }
-                    //else
-                    //{
-
-                    //}
-                }
-            }
-            return pathImg;
+            return Account.Instance;
         }
-
 
     }
 }

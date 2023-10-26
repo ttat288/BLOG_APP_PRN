@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DataAccess.UserDAO;
+using BlogObject;
 
 namespace DataAccess.Repository
 {
     public class UserRepository : IUserRepository
     {
-        public string img()
+        public bool Login(string mail, string pass, bool rem)
         {
-            return UserDAO.Instance.img();
+            return UserDAO.Instance.Login(mail, pass, rem);
         }
 
-        public bool Login(string mail, string pass)
+        public Account remember()
         {
-            return UserDAO.Instance.Login(mail, pass);
+            return UserDAO.Instance.remember();
         }
     }
 }

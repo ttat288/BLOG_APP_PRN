@@ -14,7 +14,6 @@ namespace Assignment_PRN_Team
     public partial class frmUser : Form
     {
         bool sidebarExpand = false;
-
         public frmUser()
         {
             InitializeComponent();
@@ -59,13 +58,14 @@ namespace Assignment_PRN_Team
             {
                 close = true;
                 this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
                 this.Close();
             }
             else
             {
                 close = false;
             }
-
         }
 
         private void frmUser_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,11 +83,6 @@ namespace Assignment_PRN_Team
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-
-
-
-
-
 
         }
 

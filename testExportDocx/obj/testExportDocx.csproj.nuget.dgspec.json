@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\FPTU\\Ki`_5\\PRNN\\testExportDocx\\testExportDocx\\testExportDocx.csproj": {}
+  },
+  "projects": {
+    "D:\\FPTU\\Ki`_5\\PRNN\\testExportDocx\\testExportDocx\\testExportDocx.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FPTU\\Ki`_5\\PRNN\\testExportDocx\\testExportDocx\\testExportDocx.csproj",
+        "projectName": "testExportDocx",
+        "projectPath": "D:\\FPTU\\Ki`_5\\PRNN\\testExportDocx\\testExportDocx\\testExportDocx.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\FPTU\\Ki`_5\\PRNN\\testExportDocx\\testExportDocx\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "GrapeCity.Documents.Layout": {
+              "target": "Package",
+              "version": "[3.2.0.560, )"
+            },
+            "Pdfium.Net.SDK": {
+              "target": "Package",
+              "version": "[4.87.2704, )"
+            },
+            "Spire.Doc": {
+              "target": "Package",
+              "version": "[11.10.7, )"
+            },
+            "Spire.PDF": {
+              "target": "Package",
+              "version": "[9.10.2, )"
+            },
+            "Spire.PDFViewer": {
+              "target": "Package",
+              "version": "[7.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
