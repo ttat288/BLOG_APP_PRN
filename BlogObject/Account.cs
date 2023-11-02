@@ -25,6 +25,8 @@ namespace BlogObject
             }
         }
         public string Email { get; set; }
+        public string avt { get; set; }
+        public string id { get; set; }
         public string Pass { get; set; }
         public bool Remember { get; set; }
     }

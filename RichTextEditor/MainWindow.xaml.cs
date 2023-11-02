@@ -15,9 +15,11 @@ namespace RichTextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        string id;
+        public MainWindow(string postID)
         {
             InitializeComponent();
+            id = postID;
 
             ToolBarAdv dhhd = new ToolBarAdv();
             SfRichTextBoxAdv richTextBoxAdv = new SfRichTextBoxAdv();
@@ -29,7 +31,7 @@ namespace RichTextEditor
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)
         {
-            richTextBoxAdv.Save("../../../SECRET/Posts/SE171871.docx");
+            richTextBoxAdv.Save($"../../../../SECRET/Posts/{id}.docx");
             MessageBox.Show("DONE!");
             this.Close();
         }

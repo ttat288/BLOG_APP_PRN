@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlogObject;
+using Microsoft.VisualBasic;
 
 namespace DataAccess
 {
@@ -31,8 +32,7 @@ namespace DataAccess
             }
         }
         //============================================
-        string Email, Pass;
-
+        string Email, Pass, avatarOfUser, userID;
 
         //---Login
         public bool Login(string mail, string pass,bool rem)
@@ -46,6 +46,8 @@ namespace DataAccess
                     // Kiểm tra mật khẩu
                     if (user.password == pass)
                     {
+                        Account.Instance.id = user.id;
+                        Account.Instance.avt = user.avatar;
                         Account.Instance.Remember = rem;
                         Account.Instance.Email = user.mail;
                         Account.Instance.Pass = user.password;
@@ -69,6 +71,5 @@ namespace DataAccess
         {
             return Account.Instance;
         }
-
     }
 }

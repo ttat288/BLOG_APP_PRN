@@ -14,5 +14,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\PC\.nuget\packages\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>
+    <PkgPdfium_Net_SDK Condition=" '$(PkgPdfium_Net_SDK)' == '' ">C:\Users\PC\.nuget\packages\pdfium.net.sdk\4.87.2704</PkgPdfium_Net_SDK>
   </PropertyGroup>
 </Project>

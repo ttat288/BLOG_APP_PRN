@@ -33,17 +33,15 @@
             txtEmail = new System.Windows.Forms.TextBox();
             txtPassword = new System.Windows.Forms.TextBox();
             rememberCb = new System.Windows.Forms.CheckBox();
-            loginBtn = new FontAwesome.Sharp.IconButton();
-            iconEmail = new FontAwesome.Sharp.IconButton();
-            iconPassword = new FontAwesome.Sharp.IconButton();
             panel2 = new System.Windows.Forms.Panel();
-            btnClose = new FontAwesome.Sharp.IconButton();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label4 = new System.Windows.Forms.Label();
             registerBtn = new System.Windows.Forms.LinkLabel();
-            panel2.SuspendLayout();
+            btnLogin = new System.Windows.Forms.Button();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -64,10 +62,10 @@
             txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtEmail.Font = new System.Drawing.Font("UD Digi Kyokasho NK-R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             txtEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            txtEmail.Location = new System.Drawing.Point(83, 244);
+            txtEmail.Location = new System.Drawing.Point(94, 244);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter email";
-            txtEmail.Size = new System.Drawing.Size(343, 24);
+            txtEmail.Size = new System.Drawing.Size(338, 24);
             txtEmail.TabIndex = 6;
             // 
             // txtPassword
@@ -76,11 +74,11 @@
             txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtPassword.Font = new System.Drawing.Font("UD Digi Kyokasho NK-R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             txtPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            txtPassword.Location = new System.Drawing.Point(83, 328);
+            txtPassword.Location = new System.Drawing.Point(92, 328);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter password";
-            txtPassword.Size = new System.Drawing.Size(343, 24);
+            txtPassword.Size = new System.Drawing.Size(338, 24);
             txtPassword.TabIndex = 7;
             // 
             // rememberCb
@@ -94,78 +92,13 @@
             rememberCb.Text = "Remember me";
             rememberCb.UseVisualStyleBackColor = true;
             // 
-            // loginBtn
-            // 
-            loginBtn.BackColor = System.Drawing.Color.Teal;
-            loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            loginBtn.Font = new System.Drawing.Font("UD Digi Kyokasho NK-B", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            loginBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            loginBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            loginBtn.IconColor = System.Drawing.Color.Black;
-            loginBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            loginBtn.Location = new System.Drawing.Point(58, 412);
-            loginBtn.Name = "loginBtn";
-            loginBtn.Size = new System.Drawing.Size(358, 49);
-            loginBtn.TabIndex = 9;
-            loginBtn.Text = "Login";
-            loginBtn.UseVisualStyleBackColor = false;
-            loginBtn.Click += loginBtn_Click;
-            // 
-            // iconEmail
-            // 
-            iconEmail.Enabled = false;
-            iconEmail.FlatAppearance.BorderSize = 0;
-            iconEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            iconEmail.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconEmail.IconColor = System.Drawing.Color.WhiteSmoke;
-            iconEmail.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconEmail.IconSize = 23;
-            iconEmail.Location = new System.Drawing.Point(53, 239);
-            iconEmail.Name = "iconEmail";
-            iconEmail.Size = new System.Drawing.Size(27, 33);
-            iconEmail.TabIndex = 12;
-            iconEmail.UseVisualStyleBackColor = true;
-            // 
-            // iconPassword
-            // 
-            iconPassword.Enabled = false;
-            iconPassword.FlatAppearance.BorderSize = 0;
-            iconPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            iconPassword.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            iconPassword.IconColor = System.Drawing.Color.WhiteSmoke;
-            iconPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPassword.IconSize = 20;
-            iconPassword.Location = new System.Drawing.Point(53, 323);
-            iconPassword.Name = "iconPassword";
-            iconPassword.Size = new System.Drawing.Size(27, 33);
-            iconPassword.TabIndex = 13;
-            iconPassword.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            panel2.Controls.Add(btnClose);
             panel2.Location = new System.Drawing.Point(-1, 0);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(830, 23);
             panel2.TabIndex = 14;
-            // 
-            // btnClose
-            // 
-            btnClose.BackColor = System.Drawing.Color.DarkSlateGray;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            btnClose.IconColor = System.Drawing.Color.WhiteSmoke;
-            btnClose.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnClose.IconSize = 20;
-            btnClose.Location = new System.Drawing.Point(793, -13);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(37, 53);
-            btnClose.TabIndex = 0;
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
             // 
             // label2
             // 
@@ -224,6 +157,42 @@
             registerBtn.VisitedLinkColor = System.Drawing.Color.FromArgb(128, 128, 255);
             registerBtn.LinkClicked += registerBtn_LinkClicked;
             // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = System.Drawing.Color.Teal;
+            btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnLogin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnLogin.Location = new System.Drawing.Point(57, 427);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new System.Drawing.Size(373, 61);
+            btnLogin.TabIndex = 19;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += loginBtn_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label5.Location = new System.Drawing.Point(49, 238);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(46, 31);
+            label5.TabIndex = 20;
+            label5.Text = "✉";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label6.Location = new System.Drawing.Point(49, 318);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(46, 31);
+            label6.TabIndex = 21;
+            label6.Text = "🔒";
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -232,15 +201,15 @@
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             ClientSize = new System.Drawing.Size(829, 620);
             ControlBox = false;
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(btnLogin);
             Controls.Add(registerBtn);
             Controls.Add(label4);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel2);
-            Controls.Add(iconPassword);
-            Controls.Add(iconEmail);
-            Controls.Add(loginBtn);
             Controls.Add(rememberCb);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
@@ -252,7 +221,6 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmLogin";
             Load += frmLogin_Load;
-            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -273,5 +241,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel registerBtn;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

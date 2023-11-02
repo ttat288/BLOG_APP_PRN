@@ -42,11 +42,11 @@
             pdfViewer.FormsBlendMode = Patagames.Pdf.Enums.BlendTypes.FXDIB_BLEND_MULTIPLY;
             pdfViewer.LoadingIconText = "Loading...";
             pdfViewer.Location = new System.Drawing.Point(0, 0);
-            pdfViewer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            pdfViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pdfViewer.MouseMode = Patagames.Pdf.Net.Controls.WinForms.MouseModes.Default;
             pdfViewer.Name = "pdfViewer";
             pdfViewer.OptimizedLoadThreshold = 1000;
-            pdfViewer.Padding = new System.Windows.Forms.Padding(14, 16, 14, 16);
+            pdfViewer.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
             pdfViewer.PageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             pdfViewer.PageAutoDispose = true;
             pdfViewer.PageBackColor = System.Drawing.Color.White;
@@ -57,7 +57,7 @@
             pdfViewer.ShowCurrentPageHighlight = true;
             pdfViewer.ShowLoadingIcon = true;
             pdfViewer.ShowPageSeparator = true;
-            pdfViewer.Size = new System.Drawing.Size(1179, 939);
+            pdfViewer.Size = new System.Drawing.Size(1032, 704);
             pdfViewer.SizeMode = Patagames.Pdf.Net.Controls.WinForms.SizeModes.FitToWidth;
             pdfViewer.TabIndex = 3;
             pdfViewer.TextSelectColor = System.Drawing.Color.FromArgb(70, 70, 130, 180);
@@ -68,12 +68,12 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1179, 939);
+            ClientSize = new System.Drawing.Size(1032, 704);
             Controls.Add(pdfViewer);
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "Form1";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);

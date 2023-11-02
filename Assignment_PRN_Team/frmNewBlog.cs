@@ -1,4 +1,9 @@
-﻿using System;
+﻿using BlogObject;
+using BlogWinApp;
+using DataAccess.Repository;
+using Krypton.Toolkit;
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +19,16 @@ namespace Assignment_PRN_Team
 {
     public partial class frmNewBlog : Form
     {
+        IUserRepository userRepository = new UserRepository();
+        IPostRepository postRepository = new PostRepository();
+        Account account;
+        Post post = new Post();
+
         public frmNewBlog()
         {
             InitializeComponent();
+            account = userRepository.remember();
+            majorSelector.SelectedIndex = 0;
         }
 
         private void txtContent_Enter(object sender, EventArgs e)
@@ -27,16 +39,49 @@ namespace Assignment_PRN_Team
             }
         }
 
-        private void txtTitle_Enter(object sender, EventArgs e)
+        private bool IsValidImageExtension(string extension)
         {
-            if (txtTitle.Text == "Enter Title Here")
-            {
-                txtTitle.Text = "";
-            }
+            string[] validExtensions = { ".jpg", ".jpeg", ".png", ".bmp" };
+            return validExtensions.Contains(extension.ToLower());
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
+        private void kryptonButton1_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtContent_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblContent_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        string cover_image;
+        private void pictureBox_Click_1(object sender, EventArgs e)
+        {
+            post = new Post();
+            post.postID = GenerateUniquePostId(account.id);
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             // Thiết lập các thuộc tính của OpenFileDialog
@@ -48,6 +93,7 @@ namespace Assignment_PRN_Team
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string imagePath = openFileDialog.FileName;
+                cover_image = imagePath;
 
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string fileExtension = Path.GetExtension(imagePath);
@@ -60,7 +106,7 @@ namespace Assignment_PRN_Team
                 }
 
                 // Đặt tên mới cho tệp với phần mở rộng
-                string savePath = Path.Combine("../../../../SECRET/coverImg", "se123" + fileExtension);
+                string savePath = Path.Combine("../../../../SECRET/coverImg", $"{post.postID}" + fileExtension);
 
                 // Hiển thị hình ảnh trong PictureBox
                 pictureBox.ImageLocation = imagePath;
@@ -68,17 +114,99 @@ namespace Assignment_PRN_Team
                 // Lưu hình ảnh vào đường dẫn mới
                 File.Copy(imagePath, savePath, true);
 
+
             }
         }
-        private bool IsValidImageExtension(string extension)
+
+        private string GenerateUniquePostId(string userID)
         {
-            string[] validExtensions = { ".jpg", ".jpeg", ".png", ".bmp" };
-            return validExtensions.Contains(extension.ToLower());
+            string prefix = userID;
+            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            string randomPart = Guid.NewGuid().ToString("N").Substring(0, 4);
+
+            return $"{prefix}_{timestamp}_{randomPart}";
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+
+        public void createPost()
         {
-            Process.Start("../../../../RichTextEditor/bin/Debug/RichTextEditor.exe");
+
+            post.avatar = account.avt;
+            post.subject = txtSubject.Text;
+            post.title = txtTitle.Text;
+            post.major = majorSelector.SelectedItem?.ToString();
+            post.description = txtContent.Text;
+            post.coverImg = cover_image;
+            post.likes = "0";
+            post.comments = "0";
+        }
+
+        bool crPost = false;
+        private void kryptonButton1_Click_1(object sender, EventArgs e)
+        {
+            // Vô hiệu hóa các điều khiển trước khi khởi động tiến trình
+            txtSubject.Enabled = false;
+            txtTitle.Enabled = false;
+            txtContent.Enabled = false;
+            pictureBox.Enabled = false;
+            majorSelector.Enabled = false;
+            kryptonButton1.Enabled = false;
+
+            createPost();
+
+            crPost = postRepository.CreatePost(post);
+
+            // Mở hoặc kích hoạt MainWindow
+            OpenOrActivateMainWindow(post.postID);
+        }
+
+        private void OpenOrActivateMainWindow(string postID)
+        {
+            // Kiểm tra xem MainWindow đã mở hay chưa
+            RichTextEditor.MainWindow mainWindow =
+                Application.OpenForms.OfType<RichTextEditor.MainWindow>().FirstOrDefault();
+
+            if (mainWindow == null)
+            {
+                // Nếu chưa mở, tạo mới và hiển thị
+                mainWindow = new RichTextEditor.MainWindow(postID);
+                mainWindow.Show();
+
+                // Đăng ký sự kiện Closed để biết khi MainWindow đóng
+                mainWindow.Closed += (sender, e) =>
+                {
+                    // Kích hoạt sự kiện này khi MainWindow đóng
+                    this.Invoke(new Action(() =>
+                    {
+                        // Kích hoạt lại các điều khiển khi MainWindow đóng
+                        txtSubject.Enabled = true;
+                        txtTitle.Enabled = true;
+                        txtContent.Enabled = true;
+                        pictureBox.Enabled = true;
+                        majorSelector.Enabled = true;
+                        kryptonButton1.Enabled = true;
+                        if (crPost)
+                        {
+                            MessageBox.Show("Bài viết đã thêm vào database");
+                        }
+                        else MessageBox.Show("Bài viết chưa hoàn thành");
+                    }));
+                };
+            }
+            else
+            {
+                // Nếu đã mở, đưa MainWindow lên phía trước
+                mainWindow.Activate();
+            }
+        }
+
+
+        private void txtContent_TextChanged_1(object sender, EventArgs e)
+        {
+            //if (txtContent.Text.Length > 0)
+            //{
+            //    txtContent.Text = "";
+            //}
         }
     }
 }

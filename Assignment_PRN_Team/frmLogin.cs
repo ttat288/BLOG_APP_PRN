@@ -15,7 +15,7 @@ namespace Assignment_PRN_Team
 {
     public partial class frmLogin : Form
     {
-        UserRepository userRepository = new UserRepository();
+        IUserRepository userRepository = new UserRepository();
         Account RememberAcc;
 
         public frmLogin()
@@ -68,5 +68,10 @@ namespace Assignment_PRN_Team
         {
 
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

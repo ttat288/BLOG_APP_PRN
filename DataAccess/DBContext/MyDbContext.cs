@@ -9,6 +9,7 @@ namespace DataAccess.DBContext
     public class MyDbContext : DbContext
     {
         public DbSet<User> UserTb { get; set; }
+        public DbSet<Post> PostTb { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
