@@ -89,6 +89,8 @@ namespace Assignment_PRN_Team
         {
             avatar.ImageLocation = account.avt;
             avatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            txtName.Text = userRepository.user(account.id).name;
+            txtID.Text = account.id;
         }
 
         private void frmUser_Resize(object sender, EventArgs e)

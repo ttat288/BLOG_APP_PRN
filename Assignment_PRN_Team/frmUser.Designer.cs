@@ -41,6 +41,8 @@
             panel8 = new System.Windows.Forms.Panel();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             panelUC = new System.Windows.Forms.Panel();
+            txtName = new System.Windows.Forms.Label();
+            txtID = new System.Windows.Forms.Label();
             topbarMenu.SuspendLayout();
             sidebarMenu.SuspendLayout();
             panel1.SuspendLayout();
@@ -53,15 +55,17 @@
             topbarMenu.Controls.Add(panel7);
             topbarMenu.Dock = System.Windows.Forms.DockStyle.Top;
             topbarMenu.Location = new System.Drawing.Point(0, 0);
+            topbarMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             topbarMenu.Name = "topbarMenu";
-            topbarMenu.Size = new System.Drawing.Size(1369, 50);
+            topbarMenu.Size = new System.Drawing.Size(1198, 38);
             topbarMenu.TabIndex = 6;
             // 
             // panel7
             // 
             panel7.Location = new System.Drawing.Point(3, 0);
+            panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new System.Drawing.Size(68, 50);
+            panel7.Size = new System.Drawing.Size(60, 38);
             panel7.TabIndex = 8;
             // 
             // sidebarMenu
@@ -73,11 +77,12 @@
             sidebarMenu.Controls.Add(btnHome);
             sidebarMenu.Controls.Add(panel1);
             sidebarMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            sidebarMenu.Location = new System.Drawing.Point(0, 50);
-            sidebarMenu.MaximumSize = new System.Drawing.Size(240, 0);
-            sidebarMenu.MinimumSize = new System.Drawing.Size(71, 0);
+            sidebarMenu.Location = new System.Drawing.Point(0, 38);
+            sidebarMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            sidebarMenu.MaximumSize = new System.Drawing.Size(210, 0);
+            sidebarMenu.MinimumSize = new System.Drawing.Size(62, 0);
             sidebarMenu.Name = "sidebarMenu";
-            sidebarMenu.Size = new System.Drawing.Size(240, 740);
+            sidebarMenu.Size = new System.Drawing.Size(210, 554);
             sidebarMenu.TabIndex = 7;
             // 
             // btnMyBlog
@@ -86,9 +91,10 @@
             btnMyBlog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnMyBlog.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnMyBlog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnMyBlog.Location = new System.Drawing.Point(0, 324);
+            btnMyBlog.Location = new System.Drawing.Point(0, 289);
+            btnMyBlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnMyBlog.Name = "btnMyBlog";
-            btnMyBlog.Size = new System.Drawing.Size(240, 61);
+            btnMyBlog.Size = new System.Drawing.Size(210, 46);
             btnMyBlog.TabIndex = 23;
             btnMyBlog.Text = "My Blog";
             btnMyBlog.UseVisualStyleBackColor = false;
@@ -101,9 +107,10 @@
             btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnLogout.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnLogout.Location = new System.Drawing.Point(0, 679);
+            btnLogout.Location = new System.Drawing.Point(0, 508);
+            btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new System.Drawing.Size(240, 61);
+            btnLogout.Size = new System.Drawing.Size(210, 46);
             btnLogout.TabIndex = 22;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = false;
@@ -115,9 +122,10 @@
             btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnNew.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnNew.Location = new System.Drawing.Point(0, 257);
+            btnNew.Location = new System.Drawing.Point(0, 239);
+            btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnNew.Name = "btnNew";
-            btnNew.Size = new System.Drawing.Size(240, 61);
+            btnNew.Size = new System.Drawing.Size(210, 46);
             btnNew.TabIndex = 21;
             btnNew.Text = "Create Post";
             btnNew.UseVisualStyleBackColor = false;
@@ -129,9 +137,10 @@
             btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnHome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnHome.Location = new System.Drawing.Point(0, 190);
+            btnHome.Location = new System.Drawing.Point(0, 188);
+            btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnHome.Name = "btnHome";
-            btnHome.Size = new System.Drawing.Size(240, 61);
+            btnHome.Size = new System.Drawing.Size(210, 46);
             btnHome.TabIndex = 20;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -139,18 +148,22 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtID);
+            panel1.Controls.Add(txtName);
             panel1.Controls.Add(avatar);
             panel1.Controls.Add(panel8);
             panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(240, 184);
+            panel1.Size = new System.Drawing.Size(210, 184);
             panel1.TabIndex = 10;
             // 
             // avatar
             // 
-            avatar.Location = new System.Drawing.Point(78, 34);
+            avatar.Location = new System.Drawing.Point(69, 26);
+            avatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             avatar.Name = "avatar";
-            avatar.Size = new System.Drawing.Size(75, 71);
+            avatar.Size = new System.Drawing.Size(66, 66);
             avatar.TabIndex = 0;
             avatar.TabStop = false;
             // 
@@ -158,8 +171,9 @@
             // 
             panel8.BackColor = System.Drawing.Color.Teal;
             panel8.Location = new System.Drawing.Point(1, 0);
+            panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panel8.Name = "panel8";
-            panel8.Size = new System.Drawing.Size(239, 69);
+            panel8.Size = new System.Drawing.Size(209, 52);
             panel8.TabIndex = 1;
             // 
             // sidebarTimer
@@ -170,19 +184,43 @@
             // panelUC
             // 
             panelUC.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelUC.Location = new System.Drawing.Point(240, 50);
+            panelUC.Location = new System.Drawing.Point(210, 38);
+            panelUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panelUC.Name = "panelUC";
-            panelUC.Size = new System.Drawing.Size(1129, 740);
+            panelUC.Size = new System.Drawing.Size(988, 554);
             panelUC.TabIndex = 8;
+            // 
+            // txtName
+            // 
+            txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            txtName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            txtName.Location = new System.Drawing.Point(3, 94);
+            txtName.Name = "txtName";
+            txtName.Size = new System.Drawing.Size(207, 44);
+            txtName.TabIndex = 2;
+            txtName.Text = "Name Name Name Name";
+            txtName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtID
+            // 
+            txtID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            txtID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            txtID.Location = new System.Drawing.Point(1, 138);
+            txtID.Name = "txtID";
+            txtID.Size = new System.Drawing.Size(206, 28);
+            txtID.TabIndex = 3;
+            txtID.Text = "SE1123456";
+            txtID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmUser
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1369, 790);
+            ClientSize = new System.Drawing.Size(1198, 592);
             Controls.Add(panelUC);
             Controls.Add(sidebarMenu);
             Controls.Add(topbarMenu);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             Name = "frmUser";
             Text = "frmUser";
             FormClosing += frmUser_FormClosing;
@@ -217,5 +255,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnMyBlog;
+        private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.Label txtName;
     }
 }

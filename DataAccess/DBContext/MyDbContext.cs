@@ -10,6 +10,8 @@ namespace DataAccess.DBContext
     {
         public DbSet<User> UserTb { get; set; }
         public DbSet<Post> PostTb { get; set; }
+        public DbSet<Like> LikeTb { get; set; }
+        public DbSet<Comment> CommentTb { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,6 +27,10 @@ namespace DataAccess.DBContext
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             return builder.Build();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Like>().HasKey(l => new { l.userID, l.postID });
         }
     }
 }

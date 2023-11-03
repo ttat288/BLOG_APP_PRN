@@ -13,7 +13,10 @@ namespace BlogWinApp
     public partial class frmPost : Form
     {
         private List<Post> posts = new List<Post>();
+        private List<Like> likes = new List<Like>();
         IPostRepository repository = new PostRepository();
+        ILikeRepository likeRepository = new LikeRepository();
+        ICommentRepository commentRepository = new CommentRepository();
         private frmUser ParentForm { get; set; }
         public frmPost(frmUser parentForm)
         {
@@ -34,7 +37,7 @@ namespace BlogWinApp
         {
             loadPost();
         }
-        private void loadPost()
+        public void loadPost()
         {
             pnlPost.Controls.Clear();
             post[] listItems = new post[posts.Count];
@@ -48,19 +51,11 @@ namespace BlogWinApp
                 listItems[i].Content = $"{posts[i].description}";
                 listItems[i].Img = $"{posts[i].coverImg}";
 
-                if (int.Parse(posts[i].likes) >= 1000)
-                {
-                    double like_count = double.Parse(posts[i].likes) / 1000;
-                    listItems[i].Likes = $"{like_count}k";
-                }
-                else listItems[i].Likes = $"{posts[i].likes}";
+                likes = likeRepository.GetLikes(posts[i].postID);
+                double like  = likes.Count;
+                listItems[i].Likes = like.ToString();
 
-                if (int.Parse(posts[i].comments) >= 1000)
-                {
-                    double cmt_count = double.Parse(posts[i].comments) / 1000;
-                    listItems[i].Comments = $"{cmt_count}k";
-                }
-                else listItems[i].Comments = $"{posts[i].comments}";
+                listItems[i].Comments = commentRepository.CountCommentsByPostID(posts[i].postID);
 
                 pnlPost.Controls.Add(listItems[i]);
             }

@@ -115,6 +115,7 @@
             likeBtn.TabIndex = 7;
             likeBtn.Text = "👍1k";
             likeBtn.UseVisualStyleBackColor = true;
+            likeBtn.Click += likeBtn_Click;
             // 
             // commentBtn
             // 
@@ -125,6 +126,7 @@
             commentBtn.TabIndex = 8;
             commentBtn.Text = "💬800";
             commentBtn.UseVisualStyleBackColor = true;
+            commentBtn.Click += commentBtn_Click;
             // 
             // deletePost
             // 

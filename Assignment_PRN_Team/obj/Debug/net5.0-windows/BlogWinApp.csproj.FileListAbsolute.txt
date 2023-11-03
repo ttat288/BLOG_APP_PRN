@@ -124,3 +124,5 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Syn
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Syncfusion.OfficeChart.Base.xml
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmProfileAnotherPerson.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmRegister.resources
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.comment.resources
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmComment.resources

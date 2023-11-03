@@ -28,5 +28,10 @@ namespace DataAccess.Repository
         {
             return PostDAO.Instance.GetAllPosts();
         }
+
+        public string GetPostTitleById(string postID)
+        {
+            return PostDAO.Instance.GetPostTitleById(postID);
+        }
     }
 }

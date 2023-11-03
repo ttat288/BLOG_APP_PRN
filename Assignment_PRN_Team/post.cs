@@ -19,6 +19,8 @@ namespace BlogWinApp
     {
         IPostRepository postRepository = new PostRepository();
         IUserRepository userRepository = new UserRepository();
+        ILikeRepository likeRepository = new LikeRepository();
+        Like like = new Like();
         string postid, coverImgPath;
         string UserID;
         private frmPost ParentForm { get; set; }
@@ -30,19 +32,12 @@ namespace BlogWinApp
             postid = postID;
             UserID = postid.Substring(0, 8);
             coverImgPath = coverImg;
-            ParentForm = parentForm;  // Lưu trữ đối tượng frmPost
-            if(account.id != UserID) deletePost.Visible = false;
+            ParentForm = parentForm;  
+            if (account.id != UserID) deletePost.Visible = false;
         }
 
 
-        #region Properties
-        private string _title;
-        private string _major;
-        private string _content;
-        private string _img;
-        private string _avt;
-        private string _likes;
-        private string _comments;
+
 
         private void post_enter(object sender, EventArgs e)
         {
@@ -101,15 +96,68 @@ namespace BlogWinApp
         {
             testExportDocx.Form1 readPostForm = new testExportDocx.Form1(postid);
 
-            readPostForm.Show();
+            readPostForm.ShowDialog();
         }
 
         private void avatar_Click(object sender, EventArgs e)
         {
-            
+
             frmProfileAnotherPerson frm = new frmProfileAnotherPerson(UserID);
             frm.Show();
         }
+
+        private async void likeBtn_Click(object sender, EventArgs e)
+        {
+            like.postID = postid;
+            like.userID = account.id;
+
+            // Kiểm tra Likes trước khi cập nhật
+            int currentLikes = int.Parse(Likes);
+
+            // Vô hiệu hóa nút like
+            likeBtn.Enabled = false;
+
+            if (likeRepository.AddLike(like))
+            {
+                currentLikes++;
+                Likes = currentLikes.ToString();
+            }
+            else
+            {
+                currentLikes--;
+                Likes = currentLikes.ToString();
+            }
+
+            // Đợi 1 giây trước khi kích hoạt lại nút like
+            await Task.Delay(1000);
+
+            // Kích hoạt lại nút like
+            likeBtn.Enabled = true;
+        }
+        private void commentBtn_Click(object sender, EventArgs e)
+        {
+            frmComment formComment = new frmComment(postid,this);
+            formComment.ShowDialog();
+
+        }
+        public void reload(string msg)
+        {
+            if(msg == "increase")
+            {
+            int cmt = int.Parse(Comments);
+            Comments = (cmt += 1).ToString();
+            }
+        }
+
+        #region Properties
+        private string _title;
+        private string _major;
+        private string _content;
+        private string _img;
+        private string _avt;
+        private string _likes;
+        private string _comments;
+
 
         [Category("Custom Props")]
         public string Title

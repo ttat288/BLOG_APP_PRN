@@ -111,5 +111,25 @@ namespace DataAccess
         }
 
 
+        public string GetPostTitleById(string postID)
+        {
+            using (var context = new MyDbContext())
+            {
+                // Lấy title của post dựa vào postID
+                var post = context.PostTb.FirstOrDefault(p => p.postID == postID);
+
+                // Kiểm tra xem post có tồn tại không
+                if (post != null)
+                {
+                    return post.title;
+                }
+                else
+                {
+                    Debug.WriteLine($"Không tìm thấy bài viết với postID {postID}");
+                    return null; // hoặc throw một exception nếu bạn muốn xử lý ngoại lệ
+                }
+            }
+        }
+
     }
 }
