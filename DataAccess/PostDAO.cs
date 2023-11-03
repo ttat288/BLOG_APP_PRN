@@ -71,6 +71,45 @@ namespace DataAccess
                 return false;
             }
         }
-        
+
+        public bool DeletePost(string postID)
+        {
+            try
+            {
+                using (var context = new MyDbContext())
+                {
+                    var postToRemove = context.PostTb.FirstOrDefault(p => p.postID == postID);
+
+                    if (postToRemove != null)
+                    {
+                        context.PostTb.Remove(postToRemove);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Không tìm thấy bài viết để xóa.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Lỗi khi xóa bài viết: {ex.ToString()}");
+                return false;
+            }
+        }
+        public int CountPostsByIdPrefix(string idPrefix)
+        {
+            using (var context = new MyDbContext())
+            {
+                // Đếm số lượng bài post dựa vào idPrefix
+                var count = context.PostTb.Count(p => p.postID.StartsWith(idPrefix));
+
+                return count;
+            }
+        }
+
+
     }
 }

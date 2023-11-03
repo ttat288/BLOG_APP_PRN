@@ -17,6 +17,7 @@ namespace Assignment_PRN_Team
 {
     public partial class frmUser : Form
     {
+        public static frmUser formUser;
         bool sidebarExpand = false;
         IUserRepository userRepository = new UserRepository();
         Account account;
@@ -128,14 +129,49 @@ namespace Assignment_PRN_Team
 
         }
 
-
-        private void btnHome_Click(object sender, EventArgs e)
+        private void showPost()
         {
-            frmPost formPost = new frmPost();
+            frmPost formPost = new frmPost(this);
             rsBtn();
             btnHome.BackColor = Color.DarkTurquoise;
             openChildForm(formPost);
         }
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            showPost();
+        }
+        public void deleted(string msg)
+        {
+            if (msg == "deleted") showPost();
+        }
+
+        // hiện thông báo ....(tin nhắn, thời gian hiển thị);
+        //private void ShowToast(string message, int duration)
+        //{
+        //    var toast = new Form();
+        //    toast.TopMost = true;
+        //    toast.FormBorderStyle = FormBorderStyle.None;
+        //    toast.Size = new System.Drawing.Size(300, 60);
+        //    toast.StartPosition = FormStartPosition.CenterScreen;
+        //    toast.BackColor = System.Drawing.Color.White; // Thay đổi màu nền thành màu trắng
+        //    toast.TransparencyKey = System.Drawing.Color.White;
+
+        //    var label = new System.Windows.Forms.Label();
+        //    label.Text = message;
+        //    label.TextAlign = ContentAlignment.MiddleCenter;
+        //    label.Dock = DockStyle.Fill;
+
+        //    toast.Controls.Add(label);
+        //    toast.Show();
+
+        //    Task.Delay(duration).ContinueWith(t => {
+        //        if (!toast.IsDisposed && toast.Created)
+        //        {
+        //            toast.Invoke(new Action(() => toast.Close()));
+        //        }
+        //    });
+        //}
+
         private void rsBtn()
         {
             btnHome.BackColor = Color.FromArgb(0, 64, 64);

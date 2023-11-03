@@ -10,14 +10,16 @@ namespace testExportDocx
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string postID;
+        public Form1(string id)
         {
             InitializeComponent();
+            postID = id;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             var doc = new GcWordDocument();
-            doc.Load("../../../../SECRET/Posts/SE171871.docx");
+            doc.Load($"../../../../SECRET/Posts/{postID}.docx");
             doc.SaveAsPdf("test.pdf");
 
             string pdfFilePath = "test.pdf";

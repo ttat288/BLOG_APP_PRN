@@ -15,7 +15,7 @@ namespace RichTextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        string id;
+        string id="Unknown";
         public MainWindow(string postID)
         {
             InitializeComponent();
@@ -26,7 +26,6 @@ namespace RichTextEditor
             richTextBoxAdv.LayoutType = LayoutType.Continuous;
 
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)

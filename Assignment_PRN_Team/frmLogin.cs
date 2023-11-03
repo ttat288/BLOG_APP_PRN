@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BlogWinApp;
 
 namespace Assignment_PRN_Team
 {
@@ -45,7 +46,11 @@ namespace Assignment_PRN_Team
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -66,7 +71,9 @@ namespace Assignment_PRN_Team
 
         private void registerBtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmRegister frmRegister = new frmRegister();
+            frmRegister.Show();
+            this.Hide();
         }
 
         //private void button1_Click(object sender, EventArgs e)

@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Assignment_PRN_Team;
+using BlogObject;
+using DataAccess.Repository;
+using DocumentFormat.OpenXml.Office.CustomUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +17,21 @@ namespace BlogWinApp
 {
     public partial class post : UserControl
     {
-        public post()
+        IPostRepository postRepository = new PostRepository();
+        IUserRepository userRepository = new UserRepository();
+        string postid, coverImgPath;
+        string UserID;
+        private frmPost ParentForm { get; set; }
+        Account account;
+        public post(string postID, string coverImg, frmPost parentForm)
         {
             InitializeComponent();
+            account = userRepository.remember();
+            postid = postID;
+            UserID = postid.Substring(0, 8);
+            coverImgPath = coverImg;
+            ParentForm = parentForm;  // Lưu trữ đối tượng frmPost
+            if(account.id != UserID) deletePost.Visible = false;
         }
 
 
@@ -26,6 +43,73 @@ namespace BlogWinApp
         private string _avt;
         private string _likes;
         private string _comments;
+
+        private void post_enter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Gainsboro;
+        }
+
+        private void post_leave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+        }
+
+        private void delete_enter(object sender, EventArgs e)
+        {
+            deletePost.ForeColor = Color.Red;
+        }
+
+        private void delete_leave(object sender, EventArgs e)
+        {
+            deletePost.ForeColor = Color.Black;
+        }
+
+        //========================DELETE FILE=============================
+        private void deletePost_Click(object sender, EventArgs e)
+        {
+            string filePath = $"../../../../SECRET/Posts/{postid}.docx";
+
+            if (File.Exists(filePath) && File.Exists(coverImgPath))
+            {
+                DeleteFile(filePath, coverImgPath);
+                postRepository.DeletePost(postid);
+                MessageBox.Show("Bài post đã được xóa thành công.");
+
+                // Gọi phương thức trực tiếp từ đối tượng frmPost
+                ParentForm.deleted("deleted");
+            }
+            else
+            {
+                MessageBox.Show($"File {filePath} or {coverImgPath} không tồn tại.");
+            }
+        }
+        static void DeleteFile(string filePath, string coverImgPath)
+        {
+            try
+            {
+                File.Delete(filePath);
+                File.Delete(coverImgPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xóa file: {ex.Message}");
+            }
+        }
+
+        //================================================================
+        private void post_click(object sender, EventArgs e)
+        {
+            testExportDocx.Form1 readPostForm = new testExportDocx.Form1(postid);
+
+            readPostForm.Show();
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            
+            frmProfileAnotherPerson frm = new frmProfileAnotherPerson(UserID);
+            frm.Show();
+        }
 
         [Category("Custom Props")]
         public string Title
@@ -86,7 +170,7 @@ namespace BlogWinApp
         }
 
 
-        
+
         #endregion
     }
 }

@@ -11,5 +11,7 @@ namespace DataAccess.Repository
     {
         public List<Post> GetAllPosts();
         public bool CreatePost(Post post);
+        public bool DeletePost(string postID);
+        public int CountPostsByIdPrefix(string idPrefix);
     }
 }

@@ -1,15 +1,12 @@
-﻿using BlogObject;
+﻿using Assignment_PRN_Team;
+using BlogObject;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Windows.Interop;
 
 namespace BlogWinApp
 {
@@ -17,20 +14,34 @@ namespace BlogWinApp
     {
         private List<Post> posts = new List<Post>();
         IPostRepository repository = new PostRepository();
-        public frmPost()
+        private frmUser ParentForm { get; set; }
+        public frmPost(frmUser parentForm)
         {
             InitializeComponent();
             posts.AddRange(repository.GetAllPosts());
+            ParentForm = parentForm;
         }
+        public void deleted(string msg)
+        {
+            if(msg == "deleted")
+            {
+                ParentForm.deleted("deleted");
+            }
+        }
+
 
         private void frmPost_Load(object sender, EventArgs e)
         {
+            loadPost();
+        }
+        private void loadPost()
+        {
+            pnlPost.Controls.Clear();
             post[] listItems = new post[posts.Count];
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new post();
-
+                listItems[i] = new post(posts[i].postID, posts[i].coverImg, this);
                 listItems[i].Avatar = $"{posts[i].avatar}";
                 listItems[i].Title = $"{posts[i].subject} / {posts[i].title}";
                 listItems[i].Major = $"{posts[i].major}";
@@ -54,10 +65,12 @@ namespace BlogWinApp
                 pnlPost.Controls.Add(listItems[i]);
             }
         }
-
         private void postform_sizechanged(object sender, EventArgs e)
         {
 
         }
+
+        
+
     }
 }

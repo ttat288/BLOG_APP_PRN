@@ -20,5 +20,6 @@ namespace BlogObject
         public string coverImg { get; set; }
         public string likes { get; set; }
         public string comments { get; set; }
+        public string userID { get; set; }
     }
 }
