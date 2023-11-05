@@ -1,14 +1,7 @@
-﻿using DataAccess.DBContext;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BlogObject;
-using Microsoft.VisualBasic;
+using BlogObject.Models;
 
 namespace DataAccess
 {
@@ -37,20 +30,21 @@ namespace DataAccess
         //---Login
         public bool Login(string mail, string pass,bool rem)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
-                var user = context.UserTb.FirstOrDefault(u => u.mail == mail);
+                var user = context.UserTbls.FirstOrDefault(u => u.Email == mail);
 
                 if (user != null)
                 {
                     // Kiểm tra mật khẩu
-                    if (user.password == pass)
+                    if (user.Password == pass)
                     {
-                        Account.Instance.id = user.id;
-                        Account.Instance.avt = user.avatar;
+                        Account.Instance.id = user.UserId;
+                        Account.Instance.avt = user.Avatar;
                         Account.Instance.Remember = rem;
-                        Account.Instance.Email = user.mail;
-                        Account.Instance.Pass = user.password;
+                        Account.Instance.Email = user.Email;
+                        Account.Instance.Pass = user.Password;
+                        Account.Instance.Role = user.Role;
                         // Đăng nhập thành công
                         return true;
                     }
@@ -71,23 +65,23 @@ namespace DataAccess
         {
             return Account.Instance;
         }
-        public User user(string id)
+        public UserTbl user(string id)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 // Tìm người dùng dựa vào ID
-                var user = context.UserTb.FirstOrDefault(u => u.id == id);
+                var user = context.UserTbls.FirstOrDefault(u => u.UserId == id);
 
                 // Kiểm tra xem người dùng có tồn tại không
                 if (user != null)
                 {
                     // Trả về thông tin người dùng
-                    return new User
+                    return new UserTbl
                     {
-                        id = user.id,
-                        mail = user.mail,
-                        avatar = user.avatar,
-                        name = user.name
+                        UserId = user.UserId,
+                        Email = user.Email,
+                        Avatar = user.Avatar,
+                        Name = user.Name
                     };
                 }
                 else
@@ -98,19 +92,19 @@ namespace DataAccess
             }
         }
 
-        public bool CreateUser(User newUser)
+        public bool CreateUser(UserTbl newUser)
         {
             try
             {
-                using (var context = new MyDbContext())
+                using (var context = new BlogPrnContext())
                 {
                     // Kiểm tra xem người dùng đã tồn tại chưa
-                    var existingUser = context.UserTb.FirstOrDefault(u => u.mail == newUser.mail || u.id == newUser.id);
+                    var existingUser = context.UserTbls.FirstOrDefault(u => u.Email == newUser.Email || u.UserId == newUser.UserId);
 
                     if (existingUser == null)
                     {
                         // Người dùng chưa tồn tại, thêm mới
-                        context.UserTb.Add(newUser);
+                        context.UserTbls.Add(newUser);
                         context.SaveChanges();
                         return true;
                     }

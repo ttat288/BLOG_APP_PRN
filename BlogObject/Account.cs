@@ -28,6 +28,7 @@ namespace BlogObject
         public string avt { get; set; }
         public string id { get; set; }
         public string Pass { get; set; }
+        public string Role { get; set; }
         public bool Remember { get; set; }
     }
 }

@@ -1,12 +1,8 @@
-﻿using BlogObject;
-using DataAccess.DBContext;
+﻿using BlogObject.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -31,25 +27,25 @@ namespace DataAccess
         }
         //============================================
 
-        public bool AddLike(Like like)
+        public bool AddLike(LikeTbl like)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
-                var existingLike = context.LikeTb
-                    .Where(l => l.postID == like.postID && l.userID == like.userID)
+                var existingLike = context.LikeTbls
+                    .Where(l => l.PostId == like.PostId && l.UserId == like.UserId)
                     .FirstOrDefault();
 
                 try
                 {
                     if (existingLike == null)
                     {
-                        context.LikeTb.Add(like);
+                        context.LikeTbls.Add(like);
                         context.SaveChanges();
                         return true;
                     }
                     else
                     {
-                        context.LikeTb.Remove(existingLike);
+                        context.LikeTbls.Remove(existingLike);
                         context.SaveChanges();
                         return false;
                     }
@@ -63,14 +59,31 @@ namespace DataAccess
         }
 
 
-        public List<Like> GetLikes(string postID)
+        public List<LikeTbl> GetLikes(string postID)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 // Sử dụng LINQ để truy vấn các Like dựa trên postID
-                var likes = context.LikeTb.Where(l => l.postID == postID).ToList();
+                var likes = context.LikeTbls.Where(l => l.PostId == postID).ToList();
 
                 return likes;
+            }
+        }
+
+        public void DeleteAllLikes(string postID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                // Lấy tất cả các like dựa trên postID
+                var likesToDelete = context.LikeTbls.Where(l => l.PostId == postID).ToList();
+
+                // Xóa từng like
+                foreach (var like in likesToDelete)
+                {
+                    context.LikeTbls.Remove(like);
+                }
+                // Lưu thay đổi vào cơ sở dữ liệu
+                context.SaveChanges();
             }
         }
 

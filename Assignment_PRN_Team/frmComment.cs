@@ -1,13 +1,8 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlogWinApp
@@ -18,11 +13,11 @@ namespace BlogWinApp
         IUserRepository userRepository = new UserRepository();
         post ParentForm;
         IPostRepository postRepository = new PostRepository();
-        List<Comment> comments = new List<Comment>();
-        Comment comment = new Comment();
+        List<CommentTbl> comments = new List<CommentTbl>();
+        CommentTbl comment = new CommentTbl();
         Account account;
         string postID;
-        User user;
+        UserTbl user;
         public frmComment(string postid, post parentForm)
         {
             InitializeComponent();
@@ -30,8 +25,8 @@ namespace BlogWinApp
             postID = postid;
             comments.AddRange(commentRepository.GetAllComments());
             account = userRepository.remember();
-            txtName.Text = userRepository.user(account.id).name;
-            avatar.ImageLocation = userRepository.user(account.id).avatar;
+            txtName.Text = userRepository.user(account.id).Name;
+            avatar.ImageLocation = userRepository.user(account.id).Avatar;
             avatar.SizeMode = PictureBoxSizeMode.StretchImage;
             ParentForm = parentForm;
         }
@@ -49,13 +44,13 @@ namespace BlogWinApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                if (comments[i].postID.Trim() == postID.Trim())
+                if (comments[i].PostId.Trim() == postID.Trim())
                 {
                     listItems[i] = new comment();
-                    user = userRepository.user(comments[i].userID);
-                    listItems[i].Comment = comments[i].comment;
-                    listItems[i].Avatar = comments[i].avatar;
-                    listItems[i].Name = user.name;
+                    user = userRepository.user(comments[i].UserId);
+                    listItems[i].Comment = comments[i].Comment;
+                    listItems[i].Avatar = user.Avatar;
+                    listItems[i].Name = user.Name;
                     pnlComment.Controls.Add(listItems[i]);
                 }
             }
@@ -63,20 +58,23 @@ namespace BlogWinApp
         }
         private void btnComment_Click(object sender, EventArgs e)
         {
-            comment.avatar = account.avt;
-            comment.commentID = GenerateUniqueCommentID(account.id);
-            comment.userID = account.id;
-            comment.comment = txtComment.Text;
-            comment.postID = postID;
-            if (commentRepository.AddComment(comment))
+            if (txtComment.Text.Trim().Length > 0)
             {
-                MessageBox.Show("Thành công!");
-                loadComment();
-                txtComment.Text = "";
-                ParentForm.reload("increase");
+
+                comment.CmtId = GenerateUniqueCommentID(account.id);
+                comment.UserId = account.id;
+                comment.Comment = txtComment.Text;
+                comment.PostId = postID;
+                if (commentRepository.AddComment(comment))
+                {
+                    MessageBox.Show("Thành công!");
+                    loadComment();
+                    txtComment.Text = "";
+                    ParentForm.reload("increase");
+                }
+                else MessageBox.Show("Lỗi!");
             }
-            else MessageBox.Show("Lỗi!");
-            
+            else MessageBox.Show("Hãy nhắn chút gì đó trước khi comment!");
         }
 
         private string GenerateUniqueCommentID(string userID)
@@ -86,6 +84,18 @@ namespace BlogWinApp
             string randomPart = Guid.NewGuid().ToString("N").Substring(0, 4);
 
             return $"{prefix}_{timestamp}_{randomPart}";
+        }
+
+        private void txtComment_TextChanged(object sender, EventArgs e)
+        {
+            if (txtComment.Text.Length > 184)
+            {
+                MessageBox.Show("độ dài không vượt quá 180.");
+                txtComment.Text = txtComment.Text.Substring(0, 184);
+
+                txtComment.SelectionStart = txtComment.Text.Length;
+                txtComment.SelectionLength = 0;
+            }
         }
     }
 }

@@ -2,15 +2,7 @@
 using BlogWinApp;
 using DataAccess.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace Assignment_PRN_Team
@@ -25,6 +17,7 @@ namespace Assignment_PRN_Team
         {
             InitializeComponent();
             account = userRepository.remember();
+            if (account.Role != "lecturer") btnApprove.Visible = false;
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -89,7 +82,7 @@ namespace Assignment_PRN_Team
         {
             avatar.ImageLocation = account.avt;
             avatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            txtName.Text = userRepository.user(account.id).name;
+            txtName.Text = userRepository.user(account.id).Name;
             txtID.Text = account.id;
         }
 
@@ -187,6 +180,11 @@ namespace Assignment_PRN_Team
         }
 
         private void btnMyBlog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,5 +1,6 @@
 ﻿using Assignment_PRN_Team;
 using BlogObject;
+using BlogObject.Models;
 using DataAccess.Repository;
 using System;
 using System.IO;
@@ -11,7 +12,7 @@ namespace BlogWinApp
     public partial class frmRegister : Form
     {
         IUserRepository userRepository = new UserRepository();
-        User user = new User();
+        UserTbl user = new UserTbl();
         string fileExtension;
         string imagePath;
         public frmRegister()
@@ -38,7 +39,7 @@ namespace BlogWinApp
                 if (avatar.ImageLocation != null)
                 {
                     string savePath = Path.Combine($"../../../../SECRET/userImg/{txtID.Text}" + fileExtension);
-                    user.avatar = savePath;
+                    user.Avatar = savePath;
                     // Lưu hình ảnh vào đường dẫn mới
                     File.Copy(imagePath, savePath, true);
                 }
@@ -47,16 +48,15 @@ namespace BlogWinApp
                     DialogResult result = MessageBox.Show("Bạn có chắc chắn không chọn avatar không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        user.avatar = "../../../../SECRET/userImg/joe.jpeg";
+                        user.Avatar = "../../../../SECRET/userImg/joe.jpeg";
                     }
                 }
-                user.id = txtID.Text;
-                user.role = "student";
-                user.name = txtFullname.Text;
-                user.mail = txtEmail.Text;
-                user.password = txtPassword.Text;
-                user.major = selectMajor.SelectedItem?.ToString();
-                user.bio = "Hello";
+                user.UserId = txtID.Text;
+                user.Role = "student";
+                user.Name = txtFullname.Text;
+                user.Email = txtEmail.Text;
+                user.Password = txtPassword.Text;
+                user.Major = selectMajor.SelectedItem?.ToString();
                 if (userRepository.CreateUser(user))
                 {
                     DialogResult changeForm = MessageBox.Show("Tạo thành công, đăng nhập ngay?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

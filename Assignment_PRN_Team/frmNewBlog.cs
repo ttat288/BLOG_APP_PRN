@@ -1,4 +1,5 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using BlogWinApp;
 using DataAccess.Repository;
 using Krypton.Toolkit;
@@ -23,7 +24,7 @@ namespace Assignment_PRN_Team
         IUserRepository userRepository = new UserRepository();
         IPostRepository postRepository = new PostRepository();
         Account account;
-        Post post = new Post();
+        PostTbl post = new PostTbl();
 
         public frmNewBlog()
         {
@@ -80,8 +81,8 @@ namespace Assignment_PRN_Team
         string cover_image;
         private void pictureBox_Click_1(object sender, EventArgs e)
         {
-            post = new Post();
-            post.postID = GenerateUniquePostId(account.id);
+            post = new PostTbl();
+            post.PostId = GenerateUniquePostId(account.id);
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
@@ -107,7 +108,7 @@ namespace Assignment_PRN_Team
                 }
 
                 // Đặt tên mới cho tệp với phần mở rộng
-                string savePath = Path.Combine("../../../../SECRET/coverImg", $"{post.postID}" + fileExtension);
+                string savePath = Path.Combine("../../../../SECRET/coverImg", $"{post.PostId}" + fileExtension);
                 cover_image = savePath;
 
                 // Hiển thị hình ảnh trong PictureBox
@@ -132,16 +133,13 @@ namespace Assignment_PRN_Team
 
         public void createPost()
         {
-
-            post.avatar = account.avt;
-            post.subject = txtSubject.Text;
-            post.title = txtTitle.Text;
-            post.major = majorSelector.SelectedItem?.ToString();
-            post.description = txtContent.Text;
-            post.coverImg = cover_image;
-            post.likes = "0";
-            post.comments = "0";
-            post.userID = account.id;
+            post.Subject = txtSubject.Text;
+            post.Title = txtTitle.Text;
+            post.Major = majorSelector.SelectedItem?.ToString();
+            post.Description = txtContent.Text;
+            post.CoverImg = cover_image;
+            post.UserId = account.id;
+            post.Status = "waiting";
         }
 
         private bool chkForm()
@@ -180,7 +178,7 @@ namespace Assignment_PRN_Team
                     crPost = postRepository.CreatePost(post);
 
                     // Mở hoặc kích hoạt MainWindow
-                    OpenOrActivateMainWindow(post.postID);
+                    OpenOrActivateMainWindow(post.PostId);
                 }
             }else MessageBox.Show("Bạn chưa hoàn thành thông tin bài post.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mwp8VH6tm4UbTpovzeuHnoUOI+wMdvaka55+C1mPW/d8jamqsSMaNK4F9bWOVrVSKCjpwW/O7ayaoVo8uUGbqw==",
+  "success": true,
+  "projectFilePath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\CreatePost\\CreatePost.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.compression.base\\23.1.43\\syncfusion.compression.base.23.1.43.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.docio.wpf\\23.1.43\\syncfusion.docio.wpf.23.1.43.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.licensing\\23.1.43\\syncfusion.licensing.23.1.43.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.officechart.base\\23.1.43\\syncfusion.officechart.base.23.1.43.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.sfrichtextboxadv.wpf\\23.1.43\\syncfusion.sfrichtextboxadv.wpf.23.1.43.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\syncfusion.shared.wpf\\23.1.43\\syncfusion.shared.wpf.23.1.43.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.Compression.Base 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.Compression.Base",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.DocIO.Wpf 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.DocIO.Wpf",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.OfficeChart.Base 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.OfficeChart.Base",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.SfRichTextBoxAdv.WPF 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.SfRichTextBoxAdv.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.Shared.WPF 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.Shared.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}

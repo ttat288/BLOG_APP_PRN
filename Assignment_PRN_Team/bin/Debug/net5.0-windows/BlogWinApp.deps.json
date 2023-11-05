@@ -1600,6 +1600,11 @@
         }
       },
       "BlogObject/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Microsoft.Extensions.Configuration": "5.0.0",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0"
+        },
         "runtime": {
           "BlogObject.dll": {}
         }
@@ -1632,51 +1637,51 @@
           "readPost.dll": {}
         }
       },
-      "Syncfusion.SfRichTextBoxAdv.WPF/17.3460.0.34": {
+      "Syncfusion.SfRichTextBoxAdv.WPF/23.1460.43.0": {
         "runtime": {
           "Syncfusion.SfRichTextBoxAdv.WPF.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
           }
         }
       },
-      "Syncfusion.Shared.Wpf/17.3460.0.34": {
+      "Syncfusion.Shared.Wpf/23.1460.43.0": {
         "runtime": {
           "Syncfusion.Shared.Wpf.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
           }
         }
       },
-      "Syncfusion.DocIO.Base/17.3460.0.34": {
+      "Syncfusion.DocIO.Base/23.1460.43.0": {
         "runtime": {
           "Syncfusion.DocIO.Base.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
           }
         }
       },
-      "Syncfusion.Licensing/17.3460.0.34": {
-        "runtime": {
-          "Syncfusion.Licensing.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
-          }
-        }
-      },
-      "Syncfusion.Compression.Base/17.3460.0.34": {
+      "Syncfusion.Compression.Base/23.1460.43.0": {
         "runtime": {
           "Syncfusion.Compression.Base.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
           }
         }
       },
-      "Syncfusion.OfficeChart.Base/17.3460.0.34": {
+      "Syncfusion.Licensing/23.1460.43.0": {
+        "runtime": {
+          "Syncfusion.Licensing.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.OfficeChart.Base/23.1460.43.0": {
         "runtime": {
           "Syncfusion.OfficeChart.Base.dll": {
-            "assemblyVersion": "17.3460.0.34",
-            "fileVersion": "17.3460.0.34"
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
           }
         }
       }
@@ -2786,32 +2791,32 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.SfRichTextBoxAdv.WPF/17.3460.0.34": {
+    "Syncfusion.SfRichTextBoxAdv.WPF/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.Shared.Wpf/17.3460.0.34": {
+    "Syncfusion.Shared.Wpf/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.DocIO.Base/17.3460.0.34": {
+    "Syncfusion.DocIO.Base/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.Licensing/17.3460.0.34": {
+    "Syncfusion.Compression.Base/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.Compression.Base/17.3460.0.34": {
+    "Syncfusion.Licensing/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.OfficeChart.Base/17.3460.0.34": {
+    "Syncfusion.OfficeChart.Base/23.1460.43.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

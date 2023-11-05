@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using static DataAccess.UserDAO;
 using BlogObject;
 using System.Runtime.Intrinsics.Arm;
+using BlogObject.Models;
 
 namespace DataAccess.Repository
 {
     public class UserRepository : IUserRepository
     {
-        public bool CreateUser(User newUser)
+        public bool CreateUser(UserTbl newUser)
         {
             return UserDAO.Instance.CreateUser(newUser);
         }
@@ -26,7 +27,7 @@ namespace DataAccess.Repository
             return UserDAO.Instance.remember();
         }
 
-        public User user(string id)
+        public UserTbl user(string id)
         {
             return UserDAO.Instance.user(id);
         }

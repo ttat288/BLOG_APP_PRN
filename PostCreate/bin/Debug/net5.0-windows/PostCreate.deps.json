@@ -1,0 +1,139 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PostCreate/1.0.0": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43",
+          "Syncfusion.DocIO.Wpf": "23.1.43",
+          "Syncfusion.Licensing": "23.1.43",
+          "Syncfusion.OfficeChart.Base": "23.1.43",
+          "Syncfusion.SfRichTextBoxAdv.WPF": "23.1.43",
+          "Syncfusion.Shared.WPF": "23.1.43"
+        },
+        "runtime": {
+          "PostCreate.dll": {}
+        }
+      },
+      "Syncfusion.Compression.Base/23.1.43": {
+        "runtime": {
+          "lib/net46/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.DocIO.Wpf/23.1.43": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43",
+          "Syncfusion.Licensing": "23.1.43",
+          "Syncfusion.OfficeChart.Base": "23.1.43"
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.DocIO.Base.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/23.1.43": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "23.1.43.0",
+            "fileVersion": "23.1.43.0"
+          }
+        }
+      },
+      "Syncfusion.OfficeChart.Base/23.1.43": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43"
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.OfficeChart.Base.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.SfRichTextBoxAdv.WPF/23.1.43": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43",
+          "Syncfusion.DocIO.Wpf": "23.1.43",
+          "Syncfusion.Licensing": "23.1.43",
+          "Syncfusion.OfficeChart.Base": "23.1.43",
+          "Syncfusion.Shared.WPF": "23.1.43"
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.SfRichTextBoxAdv.WPF.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/23.1.43": {
+        "dependencies": {
+          "Syncfusion.Licensing": "23.1.43"
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.Shared.WPF.dll": {
+            "assemblyVersion": "23.1460.43.0",
+            "fileVersion": "23.1460.43.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PostCreate/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Syncfusion.Compression.Base/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aKUUXn3CgeYRpqHlmtHj85dXEQ6GU8mByr+VCyD+zny9ik3eE8MpeC+pM0eOzQigB76N+/oYIW4Gcxc7TZruEg==",
+      "path": "syncfusion.compression.base/23.1.43",
+      "hashPath": "syncfusion.compression.base.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.DocIO.Wpf/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SYqkSRp6jl3BqZy9hCFvtzVyoKhGzY59fcdg/70KIyWmYfghNQ1xTGBBMG6+rdRd4MrM/l35LnNmgRhCSKYkXw==",
+      "path": "syncfusion.docio.wpf/23.1.43",
+      "hashPath": "syncfusion.docio.wpf.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ys9pmuOmgAhxwbmTI99p2bP3bd60BNshze/mQRHKDofPUY5ac9Wte+NseUwqqG8IFHI/Kdv4YI5+bMFAozR/+A==",
+      "path": "syncfusion.licensing/23.1.43",
+      "hashPath": "syncfusion.licensing.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.OfficeChart.Base/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OP9iWKQ3KIIvh4UFqorqpPqEt3ddyT9T0U7SCoPP0XM8p/TSvj0ac74r2CbEAOZou8XFpetFfcP0Jfpikf2n1A==",
+      "path": "syncfusion.officechart.base/23.1.43",
+      "hashPath": "syncfusion.officechart.base.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.SfRichTextBoxAdv.WPF/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uRxZcEqWgFl3o45wLYX/WP0y5xc9DuzB/vByOpTIvkDsPOBAJcavPBp+iQbsi2ai6YyJ8pZBnllAnzrGWfByYg==",
+      "path": "syncfusion.sfrichtextboxadv.wpf/23.1.43",
+      "hashPath": "syncfusion.sfrichtextboxadv.wpf.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.Shared.WPF/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nK2kcp9tV5oJX4AIgdeP5b2S5eQEsIQVgifetNq+9+K97ivzyoH1xhsFLpdYBRSZickfI3tGsFKOEXpPB/aq/g==",
+      "path": "syncfusion.shared.wpf/23.1.43",
+      "hashPath": "syncfusion.shared.wpf.23.1.43.nupkg.sha512"
+    }
+  }
+}

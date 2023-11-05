@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Compression.Base" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.DocIO.Wpf" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Licensing" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.OfficeChart.Base" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="23.1.43" />
+  </ItemGroup>
+
+</Project>

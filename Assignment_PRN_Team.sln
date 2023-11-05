@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogWinApp", "Assignment_PRN_Team\BlogWinApp.csproj", "{1746A38B-BF44-481E-A045-4C0CB8C90968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation Layer", "1.Presentation Layer", "{96821658-B1F2-4F1C-8B50-8E4B75252C07}"
+	ProjectSection(SolutionItems) = preProject
+		DataAccess\appsettings.json = DataAccess\appsettings.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Blog Layer", "2.Blog Layer", "{ED8BEE30-F10E-4F45-B2AB-9173D5C10211}"
 EndProject

@@ -1,12 +1,8 @@
-﻿using BlogObject;
-using DataAccess.DBContext;
+﻿using BlogObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Intrinsics.Arm;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -36,25 +32,25 @@ namespace DataAccess
 
 
 
-        public List<Post> GetAllPosts()
+        public List<PostTbl> GetAllPosts()
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
-                return context.PostTb.ToList();
+                return context.PostTbls.ToList();
             }
         }
 
-        public bool CreatePost(Post post)
+        public bool CreatePost(PostTbl post)
         {
             try
             {
-                using (var context = new MyDbContext())
+                using (var context = new BlogPrnContext())
                 {
-                    var existingPost = context.PostTb.FirstOrDefault(p => p.postID == post.postID);
+                    var existingPost = context.PostTbls.FirstOrDefault(p => p.PostId == post.PostId);
 
                     if (existingPost == null)
                     {
-                        context.PostTb.Add(post);
+                        context.PostTbls.Add(post);
                         context.SaveChanges();
                         return true;
                     }
@@ -76,13 +72,15 @@ namespace DataAccess
         {
             try
             {
-                using (var context = new MyDbContext())
+                using (var context = new BlogPrnContext())
                 {
-                    var postToRemove = context.PostTb.FirstOrDefault(p => p.postID == postID);
+                    var postToRemove = context.PostTbls.FirstOrDefault(p => p.PostId == postID);
 
                     if (postToRemove != null)
                     {
-                        context.PostTb.Remove(postToRemove);
+                        LikeDAO.Instance.DeleteAllLikes(postID);
+                        CommentDAO.Instance.DeleteAllComments(postID);
+                        context.PostTbls.Remove(postToRemove);
                         context.SaveChanges();
                         return true;
                     }
@@ -101,10 +99,10 @@ namespace DataAccess
         }
         public int CountPostsByIdPrefix(string idPrefix)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 // Đếm số lượng bài post dựa vào idPrefix
-                var count = context.PostTb.Count(p => p.postID.StartsWith(idPrefix));
+                var count = context.PostTbls.Count(p => p.PostId.StartsWith(idPrefix));
 
                 return count;
             }
@@ -113,15 +111,15 @@ namespace DataAccess
 
         public string GetPostTitleById(string postID)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 // Lấy title của post dựa vào postID
-                var post = context.PostTb.FirstOrDefault(p => p.postID == postID);
+                var post = context.PostTbls.FirstOrDefault(p => p.PostId == postID);
 
                 // Kiểm tra xem post có tồn tại không
                 if (post != null)
                 {
-                    return post.title;
+                    return post.Title;
                 }
                 else
                 {

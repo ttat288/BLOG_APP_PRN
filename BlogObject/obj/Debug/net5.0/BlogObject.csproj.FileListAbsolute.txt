@@ -9,3 +9,7 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\refint\BlogObject.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.pdb
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\ref\BlogObject.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\bin\Debug\net5.0\BlogObject.runtimeconfig.json
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\bin\Debug\net5.0\BlogObject.runtimeconfig.dev.json
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.csproj.AssemblyReference.cache
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\BlogObject\obj\Debug\net5.0\BlogObject.genruntimeconfig.cache

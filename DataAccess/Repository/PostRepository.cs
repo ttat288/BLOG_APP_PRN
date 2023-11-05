@@ -1,4 +1,5 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace DataAccess.Repository
             return PostDAO.Instance.CountPostsByIdPrefix(idPrefix);
         }
 
-        public bool CreatePost(Post post)
+        public bool CreatePost(PostTbl post)
         {
             return PostDAO.Instance.CreatePost(post);
         }
@@ -24,7 +25,7 @@ namespace DataAccess.Repository
             return PostDAO.Instance.DeletePost(postID);
         }
 
-        public List<Post> GetAllPosts()
+        public List<PostTbl> GetAllPosts()
         {
             return PostDAO.Instance.GetAllPosts();
         }

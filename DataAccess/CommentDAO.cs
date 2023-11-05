@@ -1,10 +1,7 @@
-﻿using BlogObject;
-using DataAccess.DBContext;
+﻿using BlogObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -29,13 +26,13 @@ namespace DataAccess
         }
         //============================================
 
-        public bool AddComment(Comment comment)
+        public bool AddComment(CommentTbl comment)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 try
                 {
-                    context.CommentTb.Add(comment);
+                    context.CommentTbls.Add(comment);
                     context.SaveChanges();
                     return true; 
                 }
@@ -47,13 +44,13 @@ namespace DataAccess
             }
         }
 
-        public List<Comment> GetAllComments()
+        public List<CommentTbl> GetAllComments()
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 try
                 {
-                    List<Comment> comments = context.CommentTb.ToList();
+                    List<CommentTbl> comments = context.CommentTbls.ToList();
                     return comments;
                 }
                 catch (Exception ex)
@@ -66,11 +63,11 @@ namespace DataAccess
 
         public string CountCommentsByPostID(string postID)
         {
-            using (var context = new MyDbContext())
+            using (var context = new BlogPrnContext())
             {
                 try
                 {
-                    int count = context.CommentTb.Count(comment => comment.postID == postID);
+                    int count = context.CommentTbls.Count(comment => comment.PostId == postID);
                     return count.ToString();
                 }
                 catch (Exception ex)
@@ -80,6 +77,24 @@ namespace DataAccess
                 }
             }
         }
+
+        public void DeleteAllComments(string postID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                // Lấy tất cả các comment dựa trên postID
+                var commentsToDelete = context.CommentTbls.Where(comment => comment.PostId == postID).ToList();
+
+                // Xóa từng comment
+                foreach (var comment in commentsToDelete)
+                {
+                    context.CommentTbls.Remove(comment);
+                }
+                // Lưu thay đổi vào cơ sở dữ liệu
+                context.SaveChanges();
+            }
+        }
+
 
 
     }

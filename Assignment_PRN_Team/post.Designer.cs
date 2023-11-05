@@ -43,7 +43,6 @@
             // 
             // img
             // 
-            img.BackgroundImage = Properties.Resources.a_750x450;
             img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             img.Cursor = System.Windows.Forms.Cursors.Hand;
             img.Location = new System.Drawing.Point(41, 179);
@@ -57,7 +56,6 @@
             // 
             // avatar
             // 
-            avatar.BackgroundImage = (System.Drawing.Image)resources.GetObject("avatar.BackgroundImage");
             avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             avatar.Location = new System.Drawing.Point(41, 17);
             avatar.Name = "avatar";

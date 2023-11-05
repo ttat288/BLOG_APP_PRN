@@ -1,4 +1,5 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace BlogWinApp
     {
         IUserRepository userRepository = new UserRepository();
         IPostRepository postRepository = new PostRepository();
-        User user = new User();
+        UserTbl user = new UserTbl();
         string totalPosts;
         public frmProfileAnotherPerson(string id)
         {
@@ -32,10 +33,10 @@ namespace BlogWinApp
 
         private void frmProfileAnotherPerson_Load(object sender, EventArgs e)
         {
-            avatar.ImageLocation = user.avatar;
+            avatar.ImageLocation = user.Avatar;
             avatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            userName.Text = user.name;
-            userID.Text = user.id;
+            userName.Text = user.Name;
+            userID.Text = user.UserId;
             totalPost.Text = totalPosts;
         }
     }

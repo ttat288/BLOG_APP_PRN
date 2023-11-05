@@ -1,5 +1,6 @@
 ﻿using Assignment_PRN_Team;
 using BlogObject;
+using BlogObject.Models;
 using DataAccess.Repository;
 using DocumentFormat.OpenXml.Office.CustomUI;
 using System;
@@ -20,7 +21,7 @@ namespace BlogWinApp
         IPostRepository postRepository = new PostRepository();
         IUserRepository userRepository = new UserRepository();
         ILikeRepository likeRepository = new LikeRepository();
-        Like like = new Like();
+        LikeTbl like = new LikeTbl();
         string postid, coverImgPath;
         string UserID;
         private frmPost ParentForm { get; set; }
@@ -32,7 +33,7 @@ namespace BlogWinApp
             postid = postID;
             UserID = postid.Substring(0, 8);
             coverImgPath = coverImg;
-            ParentForm = parentForm;  
+            ParentForm = parentForm;
             if (account.id != UserID) deletePost.Visible = false;
         }
 
@@ -108,8 +109,8 @@ namespace BlogWinApp
 
         private async void likeBtn_Click(object sender, EventArgs e)
         {
-            like.postID = postid;
-            like.userID = account.id;
+            like.PostId = postid;
+            like.UserId = account.id;
 
             // Kiểm tra Likes trước khi cập nhật
             int currentLikes = int.Parse(Likes);
@@ -136,16 +137,16 @@ namespace BlogWinApp
         }
         private void commentBtn_Click(object sender, EventArgs e)
         {
-            frmComment formComment = new frmComment(postid,this);
+            frmComment formComment = new frmComment(postid, this);
             formComment.ShowDialog();
 
         }
         public void reload(string msg)
         {
-            if(msg == "increase")
+            if (msg == "increase")
             {
-            int cmt = int.Parse(Comments);
-            Comments = (cmt += 1).ToString();
+                int cmt = int.Parse(Comments);
+                Comments = (cmt += 1).ToString();
             }
         }
 

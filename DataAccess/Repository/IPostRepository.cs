@@ -1,4 +1,5 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace DataAccess.Repository
 {
     public interface IPostRepository
     {
-        public List<Post> GetAllPosts();
-        public bool CreatePost(Post post);
+        public List<PostTbl> GetAllPosts();
+        public bool CreatePost(PostTbl post);
         public bool DeletePost(string postID);
         public int CountPostsByIdPrefix(string idPrefix);
         public string GetPostTitleById(string postID);

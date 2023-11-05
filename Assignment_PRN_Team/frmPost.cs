@@ -1,6 +1,8 @@
 ﻿using Assignment_PRN_Team;
 using BlogObject;
+using BlogObject.Models;
 using DataAccess.Repository;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,11 +14,12 @@ namespace BlogWinApp
 {
     public partial class frmPost : Form
     {
-        private List<Post> posts = new List<Post>();
-        private List<Like> likes = new List<Like>();
+        private List<PostTbl> posts = new List<PostTbl>();
+        private List<LikeTbl> likes = new List<LikeTbl>();
         IPostRepository repository = new PostRepository();
         ILikeRepository likeRepository = new LikeRepository();
         ICommentRepository commentRepository = new CommentRepository();
+        IUserRepository userRepository = new UserRepository();
         private frmUser ParentForm { get; set; }
         public frmPost(frmUser parentForm)
         {
@@ -44,18 +47,18 @@ namespace BlogWinApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new post(posts[i].postID, posts[i].coverImg, this);
-                listItems[i].Avatar = $"{posts[i].avatar}";
-                listItems[i].Title = $"{posts[i].subject} / {posts[i].title}";
-                listItems[i].Major = $"{posts[i].major}";
-                listItems[i].Content = $"{posts[i].description}";
-                listItems[i].Img = $"{posts[i].coverImg}";
+                listItems[i] = new post(posts[i].PostId, posts[i].CoverImg, this);
+                listItems[i].Avatar = userRepository.user(posts[i].UserId).Avatar;
+                listItems[i].Title = $"{posts[i].Subject} / {posts[i].Title}";
+                listItems[i].Major = $"{posts[i].Major}";
+                listItems[i].Content = $"{posts[i].Description}";
+                listItems[i].Img = $"{posts[i].CoverImg}";
 
-                likes = likeRepository.GetLikes(posts[i].postID);
+                likes = likeRepository.GetLikes(posts[i].PostId);
                 double like  = likes.Count;
                 listItems[i].Likes = like.ToString();
 
-                listItems[i].Comments = commentRepository.CountCommentsByPostID(posts[i].postID);
+                listItems[i].Comments = commentRepository.CountCommentsByPostID(posts[i].PostId);
 
                 pnlPost.Controls.Add(listItems[i]);
             }

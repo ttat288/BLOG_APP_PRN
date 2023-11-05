@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static DataAccess.UserDAO;
 using BlogObject;
+using BlogObject.Models;
 
 namespace DataAccess.Repository
 {
@@ -12,7 +13,7 @@ namespace DataAccess.Repository
     {
         public bool Login(string mail, string pass, bool rem);
         public Account remember();
-        public User user(string id);
-        public bool CreateUser(User newUser);
+        public UserTbl user(string id);
+        public bool CreateUser(UserTbl newUser);
     }
 }

@@ -1,0 +1,406 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "Syncfusion.Compression.Base/23.1.43": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.DocIO.Wpf/23.1.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43",
+          "Syncfusion.Licensing": "23.1.43",
+          "Syncfusion.OfficeChart.Base": "23.1.43"
+        },
+        "compile": {
+          "lib/net46/Syncfusion.DocIO.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.DocIO.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Licensing/23.1.43": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.OfficeChart.Base/23.1.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43"
+        },
+        "compile": {
+          "lib/net46/Syncfusion.OfficeChart.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.OfficeChart.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfRichTextBoxAdv.WPF/23.1.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "23.1.43",
+          "Syncfusion.DocIO.Wpf": "23.1.43",
+          "Syncfusion.Licensing": "23.1.43",
+          "Syncfusion.OfficeChart.Base": "23.1.43",
+          "Syncfusion.Shared.WPF": "23.1.43"
+        },
+        "compile": {
+          "lib/net46/Syncfusion.SfRichTextBoxAdv.WPF.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.SfRichTextBoxAdv.WPF.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/23.1.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "23.1.43"
+        },
+        "compile": {
+          "lib/net46/Syncfusion.Shared.WPF.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/Syncfusion.Shared.WPF.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Syncfusion.Compression.Base/23.1.43": {
+      "sha512": "aKUUXn3CgeYRpqHlmtHj85dXEQ6GU8mByr+VCyD+zny9ik3eE8MpeC+pM0eOzQigB76N+/oYIW4Gcxc7TZruEg==",
+      "type": "package",
+      "path": "syncfusion.compression.base/23.1.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net40/Syncfusion.Compression.Base.dll",
+        "lib/net40/Syncfusion.Compression.Base.xml",
+        "lib/net45/Syncfusion.Compression.Base.dll",
+        "lib/net45/Syncfusion.Compression.Base.xml",
+        "lib/net451/Syncfusion.Compression.Base.dll",
+        "lib/net451/Syncfusion.Compression.Base.xml",
+        "lib/net46/Syncfusion.Compression.Base.dll",
+        "lib/net46/Syncfusion.Compression.Base.xml",
+        "lib/net6.0-windows7.0/Syncfusion.Compression.Base.dll",
+        "lib/net6.0-windows7.0/Syncfusion.Compression.Base.xml",
+        "syncfusion.compression.base.23.1.43.nupkg.sha512",
+        "syncfusion.compression.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.DocIO.Wpf/23.1.43": {
+      "sha512": "SYqkSRp6jl3BqZy9hCFvtzVyoKhGzY59fcdg/70KIyWmYfghNQ1xTGBBMG6+rdRd4MrM/l35LnNmgRhCSKYkXw==",
+      "type": "package",
+      "path": "syncfusion.docio.wpf/23.1.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.DocIO.Base.dll",
+        "lib/net40/Syncfusion.DocIO.Base.xml",
+        "lib/net45/Syncfusion.DocIO.Base.dll",
+        "lib/net45/Syncfusion.DocIO.Base.xml",
+        "lib/net451/Syncfusion.DocIO.Base.dll",
+        "lib/net451/Syncfusion.DocIO.Base.xml",
+        "lib/net46/Syncfusion.DocIO.Base.dll",
+        "lib/net46/Syncfusion.DocIO.Base.xml",
+        "lib/net6.0-windows7.0/Syncfusion.DocIO.Base.dll",
+        "lib/net6.0-windows7.0/Syncfusion.DocIO.Base.xml",
+        "syncfusion.docio.wpf.23.1.43.nupkg.sha512",
+        "syncfusion.docio.wpf.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Licensing/23.1.43": {
+      "sha512": "ys9pmuOmgAhxwbmTI99p2bP3bd60BNshze/mQRHKDofPUY5ac9Wte+NseUwqqG8IFHI/Kdv4YI5+bMFAozR/+A==",
+      "type": "package",
+      "path": "syncfusion.licensing/23.1.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net6.0/Syncfusion.Licensing.dll",
+        "lib/net7.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.23.1.43.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.OfficeChart.Base/23.1.43": {
+      "sha512": "OP9iWKQ3KIIvh4UFqorqpPqEt3ddyT9T0U7SCoPP0XM8p/TSvj0ac74r2CbEAOZou8XFpetFfcP0Jfpikf2n1A==",
+      "type": "package",
+      "path": "syncfusion.officechart.base/23.1.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net40/Syncfusion.OfficeChart.Base.dll",
+        "lib/net40/Syncfusion.OfficeChart.Base.xml",
+        "lib/net45/Syncfusion.OfficeChart.Base.dll",
+        "lib/net45/Syncfusion.OfficeChart.Base.xml",
+        "lib/net451/Syncfusion.OfficeChart.Base.dll",
+        "lib/net451/Syncfusion.OfficeChart.Base.xml",
+        "lib/net46/Syncfusion.OfficeChart.Base.dll",
+        "lib/net46/Syncfusion.OfficeChart.Base.xml",
+        "lib/net6.0-windows7.0/Syncfusion.OfficeChart.Base.dll",
+        "lib/net6.0-windows7.0/Syncfusion.OfficeChart.Base.xml",
+        "syncfusion.officechart.base.23.1.43.nupkg.sha512",
+        "syncfusion.officechart.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SfRichTextBoxAdv.WPF/23.1.43": {
+      "sha512": "uRxZcEqWgFl3o45wLYX/WP0y5xc9DuzB/vByOpTIvkDsPOBAJcavPBp+iQbsi2ai6YyJ8pZBnllAnzrGWfByYg==",
+      "type": "package",
+      "path": "syncfusion.sfrichtextboxadv.wpf/23.1.43",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Design/Syncfusion.SfRichTextBoxAdv.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.SfRichTextBoxAdv.WPF.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.SfRichTextBoxAdv.WPF.VisualStudio.Design.dll",
+        "lib/net40/Syncfusion.SfRichTextBoxAdv.WPF.dll",
+        "lib/net40/Syncfusion.SfRichTextBoxAdv.WPF.xml",
+        "lib/net45/Design/Syncfusion.SfRichTextBoxAdv.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.SfRichTextBoxAdv.WPF.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.SfRichTextBoxAdv.WPF.VisualStudio.Design.dll",
+        "lib/net45/Syncfusion.SfRichTextBoxAdv.WPF.dll",
+        "lib/net45/Syncfusion.SfRichTextBoxAdv.WPF.xml",
+        "lib/net451/Design/Syncfusion.SfRichTextBoxAdv.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.SfRichTextBoxAdv.WPF.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.SfRichTextBoxAdv.WPF.VisualStudio.Design.dll",
+        "lib/net451/Syncfusion.SfRichTextBoxAdv.WPF.dll",
+        "lib/net451/Syncfusion.SfRichTextBoxAdv.WPF.xml",
+        "lib/net46/Design/Syncfusion.SfRichTextBoxAdv.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.SfRichTextBoxAdv.WPF.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.SfRichTextBoxAdv.WPF.VisualStudio.Design.dll",
+        "lib/net46/Syncfusion.SfRichTextBoxAdv.WPF.dll",
+        "lib/net46/Syncfusion.SfRichTextBoxAdv.WPF.xml",
+        "lib/net6.0-windows7.0/Design/Syncfusion.SfRichTextBoxAdv.WPF.DesignTools.dll",
+        "lib/net6.0-windows7.0/Syncfusion.SfRichTextBoxAdv.WPF.dll",
+        "lib/net6.0-windows7.0/Syncfusion.SfRichTextBoxAdv.WPF.xml",
+        "syncfusion.sfrichtextboxadv.wpf.23.1.43.nupkg.sha512",
+        "syncfusion.sfrichtextboxadv.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.WPF/23.1.43": {
+      "sha512": "nK2kcp9tV5oJX4AIgdeP5b2S5eQEsIQVgifetNq+9+K97ivzyoH1xhsFLpdYBRSZickfI3tGsFKOEXpPB/aq/g==",
+      "type": "package",
+      "path": "syncfusion.shared.wpf/23.1.43",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net40/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.Shared.WPF.dll",
+        "lib/net40/Syncfusion.Shared.WPF.xml",
+        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net45/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.Shared.WPF.dll",
+        "lib/net45/Syncfusion.Shared.WPF.xml",
+        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net451/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.Shared.WPF.dll",
+        "lib/net451/Syncfusion.Shared.WPF.xml",
+        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net46/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.Shared.WPF.dll",
+        "lib/net46/Syncfusion.Shared.WPF.xml",
+        "lib/net6.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.dll",
+        "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.xml",
+        "syncfusion.shared.wpf.23.1.43.nupkg.sha512",
+        "syncfusion.shared.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "Syncfusion.SfRichTextBoxAdv.WPF >= 23.1.43"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\CreatePost\\CreatePost.csproj",
+      "projectName": "CreatePost",
+      "projectPath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\CreatePost\\CreatePost.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\FPTU\\Ki`_5\\PRNN\\BLOG_APP_PRN\\CreatePost\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "Syncfusion.SfRichTextBoxAdv.WPF": {
+            "target": "Package",
+            "version": "[23.1.43, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.Compression.Base 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.Compression.Base",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.DocIO.Wpf 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.DocIO.Wpf",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.OfficeChart.Base 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.OfficeChart.Base",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.SfRichTextBoxAdv.WPF 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.SfRichTextBoxAdv.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Syncfusion.Shared.WPF 23.1.43' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Syncfusion.Shared.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}

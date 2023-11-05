@@ -49,7 +49,6 @@
             // 
             // avatar
             // 
-            avatar.BackgroundImage = Properties.Resources.logo;
             avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             avatar.Location = new System.Drawing.Point(15, 596);
             avatar.Name = "avatar";
@@ -83,6 +82,7 @@
             txtComment.PlaceholderText = "Enter comment";
             txtComment.Size = new System.Drawing.Size(363, 49);
             txtComment.TabIndex = 7;
+            txtComment.TextChanged += txtComment_TextChanged;
             // 
             // pnlComment
             // 
@@ -105,6 +105,7 @@
             Controls.Add(avatar);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Name = "frmComment";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmComment";
             Load += frmComment_Load;
             ((System.ComponentModel.ISupportInitialize)avatar).EndInit();

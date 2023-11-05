@@ -1,4 +1,5 @@
 ﻿using BlogObject;
+using BlogObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace DataAccess.Repository
 {
     public class LikeRepository : ILikeRepository
     {
-        public bool AddLike(Like like)
+        public bool AddLike(LikeTbl like)
         {
             return LikeDAO.Instance.AddLike(like);
         }
 
-        public List<Like> GetLikes(string postID)
+        public List<LikeTbl> GetLikes(string postID)
         {
             return LikeDAO.Instance.GetLikes(postID);
         }
