@@ -15,5 +15,9 @@ namespace DataAccess.Repository
         public bool DeletePost(string postID);
         public int CountPostsByIdPrefix(string idPrefix);
         public string GetPostTitleById(string postID);
+        public List<PostTbl> GetPostsByUserIdPrefix(string userIdPrefix);
+        public List<PostTbl> GetWaitingPosts();
+        public bool UpdatePostStatus(string postID, string newStatus);
+        public List<PostTbl> GetApprovedPosts();
     }
 }

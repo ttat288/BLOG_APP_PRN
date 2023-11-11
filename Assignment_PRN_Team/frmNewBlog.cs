@@ -22,7 +22,6 @@ namespace Assignment_PRN_Team
     public partial class frmNewBlog : Form
     {
         IUserRepository userRepository = new UserRepository();
-        IPostRepository postRepository = new PostRepository();
         Account account;
         PostTbl post = new PostTbl();
 
@@ -139,7 +138,15 @@ namespace Assignment_PRN_Team
             post.Description = txtContent.Text;
             post.CoverImg = cover_image;
             post.UserId = account.id;
-            post.Status = "waiting";
+            if(account.Role == "student")
+            {
+                post.Status = "waiting";
+            }
+            else
+            {
+                post.Status = "approve";
+            }
+            
         }
 
         private bool chkForm()
@@ -154,7 +161,6 @@ namespace Assignment_PRN_Team
             
         }
 
-        bool crPost = false;
         private void kryptonButton1_Click_1(object sender, EventArgs e)
         {
             if (chkForm())
@@ -166,61 +172,60 @@ namespace Assignment_PRN_Team
                 else
                 {
                     // Vô hiệu hóa các điều khiển trước khi khởi động tiến trình
-                    txtSubject.Enabled = false;
-                    txtTitle.Enabled = false;
-                    txtContent.Enabled = false;
-                    pictureBox.Enabled = false;
-                    majorSelector.Enabled = false;
-                    kryptonButton1.Enabled = false;
+                    //txtSubject.Enabled = false;
+                    //txtTitle.Enabled = false;
+                    //txtContent.Enabled = false;
+                    //pictureBox.Enabled = false;
+                    //majorSelector.Enabled = false;
+                    //kryptonButton1.Enabled = false;
 
                     createPost();
-
-                    crPost = postRepository.CreatePost(post);
-
+                    frmEditor editor = new frmEditor(post,this);
+                    editor.ShowDialog();
                     // Mở hoặc kích hoạt MainWindow
-                    OpenOrActivateMainWindow(post.PostId);
+                    //OpenOrActivateMainWindow(post.PostId);
                 }
             }else MessageBox.Show("Bạn chưa hoàn thành thông tin bài post.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void OpenOrActivateMainWindow(string postID)
-        {
-            RichTextEditor.MainWindow mainWindow = Application.OpenForms.OfType<RichTextEditor.MainWindow>().FirstOrDefault();
+        //private void OpenOrActivateMainWindow(string postID)
+        //{
+        //    RichTextEditor.MainWindow mainWindow = Application.OpenForms.OfType<RichTextEditor.MainWindow>().FirstOrDefault();
 
-            if (mainWindow == null)
-            {
-                mainWindow = new RichTextEditor.MainWindow(postID);
+        //    if (mainWindow == null)
+        //    {
+        //        mainWindow = new RichTextEditor.MainWindow(postID);
 
-                // Đăng ký sự kiện Closed để biết khi MainWindow đóng
-                mainWindow.Closed += (sender, e) =>
-                {
-                    // Kích hoạt lại các điều khiển khi MainWindow đóng
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        txtSubject.Enabled = true;
-                        txtTitle.Enabled = true;
-                        txtContent.Enabled = true;
-                        pictureBox.Enabled = true;
-                        majorSelector.Enabled = true;
-                        kryptonButton1.Enabled = true;
-                        if (crPost)
-                        {
-                            MessageBox.Show("Bài viết đã thêm vào database");
-                            ResetFormControls();
-                        }
-                        else MessageBox.Show("Bài viết chưa hoàn thành");
-                    });
-                };
+        //        // Đăng ký sự kiện Closed để biết khi MainWindow đóng
+        //        mainWindow.Closed += (sender, e) =>
+        //        {
+        //            // Kích hoạt lại các điều khiển khi MainWindow đóng
+        //            this.Invoke((MethodInvoker)delegate
+        //            {
+        //                txtSubject.Enabled = true;
+        //                txtTitle.Enabled = true;
+        //                txtContent.Enabled = true;
+        //                pictureBox.Enabled = true;
+        //                majorSelector.Enabled = true;
+        //                kryptonButton1.Enabled = true;
+        //                if (crPost)
+        //                {
+        //                    MessageBox.Show("Bài viết đã thêm vào database");
+        //                    ResetFormControls();
+        //                }
+        //                else MessageBox.Show("Bài viết chưa hoàn thành");
+        //            });
+        //        };
 
-                mainWindow.ShowDialog();
-            }
-            else
-            {
-                // Nếu đã mở, đưa MainWindow lên phía trước
-                mainWindow.Activate();
-            }
-        }
-        private void ResetFormControls()
+        //        mainWindow.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        // Nếu đã mở, đưa MainWindow lên phía trước
+        //        mainWindow.Activate();
+        //    }
+        //}
+        public void ResetFormControls()
         {
             pictureBox.ImageLocation = null;
             txtSubject.Text = "";

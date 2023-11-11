@@ -21,18 +21,25 @@ namespace BlogWinApp
         ICommentRepository commentRepository = new CommentRepository();
         IUserRepository userRepository = new UserRepository();
         private frmUser ParentForm { get; set; }
-        public frmPost(frmUser parentForm)
+        string msg;
+        public frmPost(frmUser parentForm,string Msg)
         {
             InitializeComponent();
-            posts.AddRange(repository.GetAllPosts());
+            msg = Msg;
             ParentForm = parentForm;
-        }
-        public void deleted(string msg)
-        {
-            if(msg == "deleted")
+            if(msg == "allpost")
             {
-                ParentForm.deleted("deleted");
+                posts.AddRange(repository.GetApprovedPosts());
+            }else if(msg == "approve")
+            {
+                posts.AddRange(repository.GetWaitingPosts());
             }
+            else posts.AddRange(repository.GetPostsByUserIdPrefix(msg));
+
+        }
+        public void reload(string msg)
+        {
+                ParentForm.showPost(msg);
         }
 
 
@@ -47,7 +54,7 @@ namespace BlogWinApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new post(posts[i].PostId, posts[i].CoverImg, this);
+                listItems[i] = new post(posts[i].PostId, posts[i].CoverImg, this,msg);
                 listItems[i].Avatar = userRepository.user(posts[i].UserId).Avatar;
                 listItems[i].Title = $"{posts[i].Subject} / {posts[i].Title}";
                 listItems[i].Major = $"{posts[i].Major}";
@@ -55,7 +62,7 @@ namespace BlogWinApp
                 listItems[i].Img = $"{posts[i].CoverImg}";
 
                 likes = likeRepository.GetLikes(posts[i].PostId);
-                double like  = likes.Count;
+                double like = likes.Count;
                 listItems[i].Likes = like.ToString();
 
                 listItems[i].Comments = commentRepository.CountCommentsByPostID(posts[i].PostId);

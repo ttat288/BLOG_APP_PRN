@@ -129,5 +129,63 @@ namespace DataAccess
             }
         }
 
+        public List<PostTbl> GetPostsByUserIdPrefix(string userIdPrefix)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                return context.PostTbls.Where(p => p.UserId.StartsWith(userIdPrefix)).ToList();
+            }
+        }
+
+        public List<PostTbl> GetWaitingPosts()
+        {
+            using (var context = new BlogPrnContext())
+            {
+                return context.PostTbls
+                    .Where(p => p.Status == "waiting")
+                    .ToList();
+            }
+        }
+        public List<PostTbl> GetApprovedPosts()
+        {
+            using (var context = new BlogPrnContext())
+            {
+                return context.PostTbls
+                    .Where(p => p.Status == "approve")
+                    .ToList();
+            }
+        }
+
+        public bool UpdatePostStatus(string postID, string newStatus)
+        {
+            try
+            {
+                using (var context = new BlogPrnContext())
+                {
+                    var postToUpdate = context.PostTbls.FirstOrDefault(p => p.PostId == postID);
+
+                    if (postToUpdate != null)
+                    {
+                        postToUpdate.Status = newStatus;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Không tìm thấy bài viết để cập nhật trạng thái.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Lỗi khi cập nhật trạng thái bài viết: {ex}");
+                return false;
+            }
+        }
+
+
+
+
     }
 }

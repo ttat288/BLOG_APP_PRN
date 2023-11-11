@@ -1,16 +1,10 @@
-﻿using Assignment_PRN_Team;
-using BlogObject;
+﻿using BlogObject;
 using BlogObject.Models;
 using DataAccess.Repository;
-using DocumentFormat.OpenXml.Office.CustomUI;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,15 +20,21 @@ namespace BlogWinApp
         string UserID;
         private frmPost ParentForm { get; set; }
         Account account;
-        public post(string postID, string coverImg, frmPost parentForm)
+        string msg;
+        public post(string postID, string coverImg, frmPost parentForm,string Msg)
         {
             InitializeComponent();
             account = userRepository.remember();
-            postid = postID;
+            postid = postID.Trim();
             UserID = postid.Substring(0, 8);
             coverImgPath = coverImg;
             ParentForm = parentForm;
             if (account.id != UserID) deletePost.Visible = false;
+            msg = Msg;
+            if (msg == "approve")
+            {
+                btnApprove.Visible = true;
+            }
         }
 
 
@@ -63,7 +63,7 @@ namespace BlogWinApp
         //========================DELETE FILE=============================
         private void deletePost_Click(object sender, EventArgs e)
         {
-            string filePath = $"../../../../SECRET/Posts/{postid}.docx";
+            string filePath = $"../../../../SECRET/Posts/{postid}.doc";
 
             if (File.Exists(filePath) && File.Exists(coverImgPath))
             {
@@ -72,7 +72,7 @@ namespace BlogWinApp
                 MessageBox.Show("Bài post đã được xóa thành công.");
 
                 // Gọi phương thức trực tiếp từ đối tượng frmPost
-                ParentForm.deleted("deleted");
+                ParentForm.reload("allpost");
             }
             else
             {
@@ -95,9 +95,9 @@ namespace BlogWinApp
         //================================================================
         private void post_click(object sender, EventArgs e)
         {
-            testExportDocx.Form1 readPostForm = new testExportDocx.Form1(postid);
-
-            readPostForm.ShowDialog();
+            frmReadDoc read = new frmReadDoc(postid);
+            read.FormClosed += (s, args) => read.Dispose();
+            read.ShowDialog();
         }
 
         private void avatar_Click(object sender, EventArgs e)
@@ -149,6 +149,17 @@ namespace BlogWinApp
                 Comments = (cmt += 1).ToString();
             }
         }
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult result = MessageBox.Show("Bạn có muốn duyệt bài này ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                postRepository.UpdatePostStatus(postid, "approve");
+                MessageBox.Show("Duyệt thành công!");
+                ParentForm.reload("approve");
+            }
+        }
 
         #region Properties
         private string _title;
@@ -159,6 +170,7 @@ namespace BlogWinApp
         private string _likes;
         private string _comments;
 
+        
 
         [Category("Custom Props")]
         public string Title

@@ -5,6 +5,7 @@ using DataAccess.Repository;
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace BlogWinApp
@@ -32,45 +33,60 @@ namespace BlogWinApp
             return true;
 
         }
+        public bool chkID()
+        {
+            string pattern = @"^SE\d{6}$";
+            Regex regex = new Regex(pattern);
+
+            return regex.IsMatch(txtID.Text);
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (chkForm())
             {
-                if (avatar.ImageLocation != null)
+                if (txtEmail.Text.EndsWith("@fpt.edu.vn"))
                 {
-                    string savePath = Path.Combine($"../../../../SECRET/userImg/{txtID.Text}" + fileExtension);
-                    user.Avatar = savePath;
-                    // Lưu hình ảnh vào đường dẫn mới
-                    File.Copy(imagePath, savePath, true);
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn không chọn avatar không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    if (chkID())
                     {
-                        user.Avatar = "../../../../SECRET/userImg/joe.jpeg";
+                        if (avatar.ImageLocation != null)
+                        {
+                            string savePath = Path.Combine($"../../../../SECRET/userImg/{txtID.Text}" + fileExtension);
+                            user.Avatar = savePath;
+                            // Lưu hình ảnh vào đường dẫn mới
+                            File.Copy(imagePath, savePath, true);
+                        }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show("Bạn có chắc chắn không chọn avatar không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                user.Avatar = "../../../../SECRET/userImg/joe.jpeg";
+                            }
+                        }
+                        user.UserId = txtID.Text;
+                        user.Role = "student";
+                        user.Name = txtFullname.Text;
+                        user.Email = txtEmail.Text;
+                        user.Password = txtPassword.Text;
+                        user.Major = selectMajor.SelectedItem?.ToString();
+                        if (userRepository.CreateUser(user))
+                        {
+                            DialogResult changeForm = MessageBox.Show("Tạo thành công, đăng nhập ngay?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (changeForm == DialogResult.Yes)
+                            {
+                                frmLogin frmLogin = new frmLogin();
+                                frmLogin.Show();
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("ID hoặc email đã tồn tại!");
+                        }
                     }
+                    else MessageBox.Show("ID phải có định dạng SE và 6 số Eg:SE123456");
                 }
-                user.UserId = txtID.Text;
-                user.Role = "student";
-                user.Name = txtFullname.Text;
-                user.Email = txtEmail.Text;
-                user.Password = txtPassword.Text;
-                user.Major = selectMajor.SelectedItem?.ToString();
-                if (userRepository.CreateUser(user))
-                {
-                    DialogResult changeForm = MessageBox.Show("Tạo thành công, đăng nhập ngay?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (changeForm == DialogResult.Yes)
-                    {
-                        frmLogin frmLogin = new frmLogin();
-                        frmLogin.Show();
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("ID hoặc email đã tồn tại!");
-                }
+                else MessageBox.Show("Email phải có đuôi \"@fpt.edu.vn\"");
             }
             else MessageBox.Show("Vui lòng nhập đủ thông tin");
         }

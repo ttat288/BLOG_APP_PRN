@@ -37,6 +37,7 @@
             likeBtn = new System.Windows.Forms.Button();
             commentBtn = new System.Windows.Forms.Button();
             deletePost = new System.Windows.Forms.Label();
+            btnApprove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)img).BeginInit();
             ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
             SuspendLayout();
@@ -140,11 +141,24 @@
             deletePost.MouseEnter += delete_enter;
             deletePost.MouseLeave += delete_leave;
             // 
+            // btnApprove
+            // 
+            btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnApprove.Location = new System.Drawing.Point(655, 16);
+            btnApprove.Name = "btnApprove";
+            btnApprove.Size = new System.Drawing.Size(84, 33);
+            btnApprove.TabIndex = 10;
+            btnApprove.Text = "Approve";
+            btnApprove.UseVisualStyleBackColor = true;
+            btnApprove.Visible = false;
+            btnApprove.Click += btnApprove_Click;
+            // 
             // post
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.WhiteSmoke;
+            Controls.Add(btnApprove);
             Controls.Add(deletePost);
             Controls.Add(commentBtn);
             Controls.Add(likeBtn);
@@ -175,5 +189,6 @@
         private System.Windows.Forms.Button likeBtn;
         private System.Windows.Forms.Button commentBtn;
         private System.Windows.Forms.Label deletePost;
+        private System.Windows.Forms.Button btnApprove;
     }
 }

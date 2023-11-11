@@ -30,9 +30,29 @@ namespace DataAccess.Repository
             return PostDAO.Instance.GetAllPosts();
         }
 
+        public List<PostTbl> GetApprovedPosts()
+        {
+            return PostDAO.Instance.GetApprovedPosts();
+        }
+
+        public List<PostTbl> GetPostsByUserIdPrefix(string userIdPrefix)
+        {
+            return PostDAO.Instance.GetPostsByUserIdPrefix(userIdPrefix);
+        }
+
         public string GetPostTitleById(string postID)
         {
             return PostDAO.Instance.GetPostTitleById(postID);
+        }
+
+        public List<PostTbl> GetWaitingPosts()
+        {
+            return PostDAO.Instance.GetWaitingPosts();
+        }
+
+        public bool UpdatePostStatus(string postID, string newStatus)
+        {
+            return PostDAO.Instance.UpdatePostStatus(postID, newStatus);
         }
     }
 }

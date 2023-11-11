@@ -3,6 +3,7 @@ using BlogObject.Models;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlogWinApp
@@ -42,7 +43,7 @@ namespace BlogWinApp
             comments = commentRepository.GetAllComments();
             comment[] listItems = new comment[comments.Count];
 
-            for (int i = 0; i < listItems.Length; i++)
+            for (int i = listItems.Length - 1; i >= 0; i--)
             {
                 if (comments[i].PostId.Trim() == postID.Trim())
                 {
@@ -56,7 +57,7 @@ namespace BlogWinApp
             }
 
         }
-        private void btnComment_Click(object sender, EventArgs e)
+        private async void btnComment_Click(object sender, EventArgs e)
         {
             if (txtComment.Text.Trim().Length > 0)
             {
@@ -67,10 +68,21 @@ namespace BlogWinApp
                 comment.PostId = postID;
                 if (commentRepository.AddComment(comment))
                 {
-                    MessageBox.Show("Thành công!");
                     loadComment();
                     txtComment.Text = "";
                     ParentForm.reload("increase");
+
+                    btnComment.Enabled = false;
+                    btnComment.Text = "3";
+                    await Task.Delay(1000);
+
+                    btnComment.Text = "2";
+                    await Task.Delay(1000);
+
+                    btnComment.Text = "1";
+                    await Task.Delay(1000);
+                    btnComment.Enabled = true;
+                    btnComment.Text = "comment";
                 }
                 else MessageBox.Show("Lỗi!");
             }
@@ -88,10 +100,10 @@ namespace BlogWinApp
 
         private void txtComment_TextChanged(object sender, EventArgs e)
         {
-            if (txtComment.Text.Length > 184)
+            if (txtComment.Text.Length > 150)
             {
-                MessageBox.Show("độ dài không vượt quá 180.");
-                txtComment.Text = txtComment.Text.Substring(0, 184);
+                MessageBox.Show("độ dài không vượt quá 150.");
+                txtComment.Text = txtComment.Text.Substring(0, 150);
 
                 txtComment.SelectionStart = txtComment.Text.Length;
                 txtComment.SelectionLength = 0;

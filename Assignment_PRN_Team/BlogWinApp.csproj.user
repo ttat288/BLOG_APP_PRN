@@ -10,6 +10,9 @@
     <Compile Update="frmComment.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmListAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmProfileAnotherPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmReadDoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmRegister.cs">

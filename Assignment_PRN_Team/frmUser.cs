@@ -124,20 +124,23 @@ namespace Assignment_PRN_Team
 
         }
 
-        private void showPost()
+        public void showPost(string msg)
         {
-            frmPost formPost = new frmPost(this);
+            frmPost formPost = new frmPost(this,msg);
             rsBtn();
-            btnHome.BackColor = Color.DarkTurquoise;
+            if(msg == "allpost")
+            {
+                    btnHome.BackColor = Color.DarkTurquoise;
+            }
+            if(msg == "approve")
+            {
+                btnApprove.BackColor = Color.DarkTurquoise;
+            }
             openChildForm(formPost);
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            showPost();
-        }
-        public void deleted(string msg)
-        {
-            if (msg == "deleted") showPost();
+            showPost("allpost");
         }
 
         // hiện thông báo ....(tin nhắn, thời gian hiển thị);
@@ -173,6 +176,7 @@ namespace Assignment_PRN_Team
             btnLogout.BackColor = Color.FromArgb(0, 64, 64);
             btnMyBlog.BackColor = Color.FromArgb(0, 64, 64);
             btnNew.BackColor = Color.FromArgb(0, 64, 64);
+            btnApprove.BackColor = Color.FromArgb(0, 64, 64);
         }
         private void panelUC_Paint(object sender, PaintEventArgs e)
         {
@@ -181,12 +185,18 @@ namespace Assignment_PRN_Team
 
         private void btnMyBlog_Click(object sender, EventArgs e)
         {
-
+            frmPost formPost = new frmPost(this,account.id);
+            rsBtn();
+            btnMyBlog.BackColor = Color.DarkTurquoise;
+            openChildForm(formPost);
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
-
+            frmPost formPost = new frmPost(this, "approve");
+            rsBtn();
+            btnApprove.BackColor = Color.DarkTurquoise;
+            openChildForm(formPost);
         }
     }
 }
