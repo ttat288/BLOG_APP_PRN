@@ -37,19 +37,21 @@
             // avatar
             // 
             avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            avatar.Location = new System.Drawing.Point(13, 19);
+            avatar.Location = new System.Drawing.Point(15, 33);
+            avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             avatar.Name = "avatar";
-            avatar.Size = new System.Drawing.Size(65, 68);
+            avatar.Size = new System.Drawing.Size(74, 75);
             avatar.TabIndex = 0;
             avatar.TabStop = false;
+            avatar.Click += avatar_Click;
             // 
             // txtComment
             // 
             txtComment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             txtComment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtComment.Location = new System.Drawing.Point(84, 35);
+            txtComment.Location = new System.Drawing.Point(96, 47);
             txtComment.Name = "txtComment";
-            txtComment.Size = new System.Drawing.Size(359, 52);
+            txtComment.Size = new System.Drawing.Size(410, 69);
             txtComment.TabIndex = 1;
             txtComment.Text = "dddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             txtComment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -59,22 +61,23 @@
             txtName.AutoSize = true;
             txtName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             txtName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtName.Location = new System.Drawing.Point(84, 15);
+            txtName.Location = new System.Drawing.Point(96, 20);
             txtName.Name = "txtName";
-            txtName.Size = new System.Drawing.Size(189, 20);
+            txtName.Size = new System.Drawing.Size(235, 25);
             txtName.TabIndex = 2;
             txtName.Text = "Name Name Name Name";
             // 
             // comment
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Teal;
             Controls.Add(txtName);
             Controls.Add(txtComment);
             Controls.Add(avatar);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "comment";
-            Size = new System.Drawing.Size(458, 104);
+            Size = new System.Drawing.Size(523, 139);
             ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
             ResumeLayout(false);
             PerformLayout();

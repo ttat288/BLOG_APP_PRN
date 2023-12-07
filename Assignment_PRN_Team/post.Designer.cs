@@ -46,9 +46,10 @@
             // 
             img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             img.Cursor = System.Windows.Forms.Cursors.Hand;
-            img.Location = new System.Drawing.Point(41, 179);
+            img.Location = new System.Drawing.Point(47, 239);
+            img.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             img.Name = "img";
-            img.Size = new System.Drawing.Size(673, 267);
+            img.Size = new System.Drawing.Size(769, 356);
             img.TabIndex = 0;
             img.TabStop = false;
             img.Click += post_click;
@@ -58,9 +59,11 @@
             // avatar
             // 
             avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            avatar.Location = new System.Drawing.Point(41, 17);
+            avatar.Cursor = System.Windows.Forms.Cursors.Hand;
+            avatar.Location = new System.Drawing.Point(47, 23);
+            avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             avatar.Name = "avatar";
-            avatar.Size = new System.Drawing.Size(44, 42);
+            avatar.Size = new System.Drawing.Size(50, 56);
             avatar.TabIndex = 1;
             avatar.TabStop = false;
             avatar.Click += avatar_Click;
@@ -70,9 +73,9 @@
             lblTitle.AutoSize = true;
             lblTitle.Cursor = System.Windows.Forms.Cursors.Hand;
             lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblTitle.Location = new System.Drawing.Point(91, 12);
+            lblTitle.Location = new System.Drawing.Point(104, 16);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new System.Drawing.Size(292, 32);
+            lblTitle.Size = new System.Drawing.Size(360, 41);
             lblTitle.TabIndex = 2;
             lblTitle.Text = "SWP / What is firebase ?";
             lblTitle.Click += post_click;
@@ -83,9 +86,9 @@
             // 
             lblMajor.AutoSize = true;
             lblMajor.Cursor = System.Windows.Forms.Cursors.Hand;
-            lblMajor.Location = new System.Drawing.Point(100, 44);
+            lblMajor.Location = new System.Drawing.Point(114, 59);
             lblMajor.Name = "lblMajor";
-            lblMajor.Size = new System.Drawing.Size(125, 15);
+            lblMajor.Size = new System.Drawing.Size(158, 20);
             lblMajor.TabIndex = 3;
             lblMajor.Text = "#software engineering";
             lblMajor.Click += post_click;
@@ -96,9 +99,9 @@
             // 
             lblContent.Cursor = System.Windows.Forms.Cursors.Hand;
             lblContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblContent.Location = new System.Drawing.Point(41, 80);
+            lblContent.Location = new System.Drawing.Point(47, 107);
             lblContent.Name = "lblContent";
-            lblContent.Size = new System.Drawing.Size(673, 96);
+            lblContent.Size = new System.Drawing.Size(769, 128);
             lblContent.TabIndex = 6;
             lblContent.Text = resources.GetString("lblContent.Text");
             lblContent.Click += post_click;
@@ -107,10 +110,12 @@
             // 
             // likeBtn
             // 
+            likeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             likeBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            likeBtn.Location = new System.Drawing.Point(41, 452);
+            likeBtn.Location = new System.Drawing.Point(47, 603);
+            likeBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             likeBtn.Name = "likeBtn";
-            likeBtn.Size = new System.Drawing.Size(98, 31);
+            likeBtn.Size = new System.Drawing.Size(112, 41);
             likeBtn.TabIndex = 7;
             likeBtn.Text = "👍1k";
             likeBtn.UseVisualStyleBackColor = true;
@@ -118,10 +123,12 @@
             // 
             // commentBtn
             // 
+            commentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             commentBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            commentBtn.Location = new System.Drawing.Point(616, 452);
+            commentBtn.Location = new System.Drawing.Point(704, 603);
+            commentBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             commentBtn.Name = "commentBtn";
-            commentBtn.Size = new System.Drawing.Size(98, 31);
+            commentBtn.Size = new System.Drawing.Size(112, 41);
             commentBtn.TabIndex = 8;
             commentBtn.Text = "💬800";
             commentBtn.UseVisualStyleBackColor = true;
@@ -130,11 +137,12 @@
             // deletePost
             // 
             deletePost.AutoSize = true;
+            deletePost.Cursor = System.Windows.Forms.Cursors.Hand;
             deletePost.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             deletePost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            deletePost.Location = new System.Drawing.Point(692, 17);
+            deletePost.Location = new System.Drawing.Point(791, 23);
             deletePost.Name = "deletePost";
-            deletePost.Size = new System.Drawing.Size(47, 32);
+            deletePost.Size = new System.Drawing.Size(59, 41);
             deletePost.TabIndex = 9;
             deletePost.Text = "🗑️";
             deletePost.Click += deletePost_Click;
@@ -143,10 +151,12 @@
             // 
             // btnApprove
             // 
+            btnApprove.Cursor = System.Windows.Forms.Cursors.Hand;
             btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnApprove.Location = new System.Drawing.Point(655, 16);
+            btnApprove.Location = new System.Drawing.Point(747, 23);
+            btnApprove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnApprove.Name = "btnApprove";
-            btnApprove.Size = new System.Drawing.Size(84, 33);
+            btnApprove.Size = new System.Drawing.Size(103, 44);
             btnApprove.TabIndex = 10;
             btnApprove.Text = "Approve";
             btnApprove.UseVisualStyleBackColor = true;
@@ -155,7 +165,7 @@
             // 
             // post
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.WhiteSmoke;
             Controls.Add(btnApprove);
@@ -167,9 +177,9 @@
             Controls.Add(lblTitle);
             Controls.Add(avatar);
             Controls.Add(img);
-            Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             Name = "post";
-            Size = new System.Drawing.Size(752, 486);
+            Size = new System.Drawing.Size(859, 648);
             Click += post_click;
             MouseEnter += post_enter;
             MouseLeave += post_leave;

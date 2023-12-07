@@ -32,11 +32,22 @@ namespace Assignment_PRN_Team
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (userRepository.Login(txtEmail.Text, txtPassword.Text, rememberCb.Checked))
+            string role = userRepository.Login(txtEmail.Text, txtPassword.Text, rememberCb.Checked);
+            if (role != "error")
             {
-                this.Hide();
-                frmUser user = new frmUser();
-                user.ShowDialog();
+                if (role == "student" || role == "lecturer")
+                {
+                    this.Hide();
+                    frmUser user = new frmUser();
+                    user.ShowDialog();
+                }
+                else if (role == "admin")
+                {
+                    this.Hide();
+                    frmAdmin admin = new frmAdmin();
+                    admin.ShowDialog();
+                }
+
             }
             else
             {

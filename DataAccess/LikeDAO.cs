@@ -86,6 +86,17 @@ namespace DataAccess
                 context.SaveChanges();
             }
         }
-
+        public void DeleteLikeByUserID(string userID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                var likesToDelete = context.LikeTbls.Where(u => u.UserId == userID).ToList();
+                foreach (var like in likesToDelete)
+                {
+                    context.LikeTbls.Remove(like);
+                }
+                context.SaveChanges();
+            }
+        }
     }
 }

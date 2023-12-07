@@ -94,7 +94,7 @@ namespace Assignment_PRN_Team
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string imagePath = openFileDialog.FileName;
-                
+
 
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string fileExtension = Path.GetExtension(imagePath);
@@ -138,7 +138,7 @@ namespace Assignment_PRN_Team
             post.Description = txtContent.Text;
             post.CoverImg = cover_image;
             post.UserId = account.id;
-            if(account.Role == "student")
+            if (account.Role == "student")
             {
                 post.Status = "waiting";
             }
@@ -146,19 +146,19 @@ namespace Assignment_PRN_Team
             {
                 post.Status = "approve";
             }
-            
+
         }
 
         private bool chkForm()
         {
-            if(txtSubject.Text == "" ||
+            if (txtSubject.Text == "" ||
             txtTitle.Text == "" ||
             txtContent.Text == "")
             {
                 return false;
             }
             return true;
-            
+
         }
 
         private void kryptonButton1_Click_1(object sender, EventArgs e)
@@ -180,12 +180,13 @@ namespace Assignment_PRN_Team
                     //kryptonButton1.Enabled = false;
 
                     createPost();
-                    frmEditor editor = new frmEditor(post,this);
+                    frmEditor editor = new frmEditor(post, this);
                     editor.ShowDialog();
                     // Mở hoặc kích hoạt MainWindow
                     //OpenOrActivateMainWindow(post.PostId);
                 }
-            }else MessageBox.Show("Bạn chưa hoàn thành thông tin bài post.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Bạn chưa hoàn thành thông tin bài post.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //private void OpenOrActivateMainWindow(string postID)

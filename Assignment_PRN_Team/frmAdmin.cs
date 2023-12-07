@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogWinApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,42 +13,56 @@ namespace Assignment_PRN_Team
 {
     public partial class frmAdmin : Form
     {
-        bool sidebarExpand = false;
         public frmAdmin()
         {
             InitializeComponent();
+
         }
 
-        private void sidebarTimer_Tick(object sender, EventArgs e)
+        private void btnListAccount_Click(object sender, EventArgs e)
         {
-            if (sidebarExpand == false)
-            {
-                //      iconLogo.Visible = false;
-                sidebarMenu.Width -= 10;
-                if (sidebarMenu.Width <= sidebarMenu.MinimumSize.Width)
-                {
-                    sidebarExpand = true;
-                    sidebarTimer.Stop();
-                }
-            }
-            else if (sidebarExpand == true)
-            {
-                //     iconLogo.Visible = true;
-                sidebarMenu.Width += 10;
-                if (sidebarMenu.Width >= sidebarMenu.MaximumSize.Width)
-                {
-                    sidebarExpand = false;
-                    sidebarTimer.Stop();
-                }
-            }
-
+            resetBtn();
+            btnListAccount.BackColor = Color.DarkTurquoise;
+            frmAccount frm = new frmAccount();
+            openChildForm(frm);
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
         {
+            if (activeForm != childForm)
+            {
+                if (activeForm != null)
+                {
 
-            sidebarTimer.Start();
+                    activeForm.Hide();
+                }
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelUC.Controls.Add(childForm);
+                panelUC.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
+
         }
+
+
+        private void btnTotalBlog_Click(object sender, EventArgs e)
+        {
+            resetBtn();
+            btnTotalBlog.BackColor = Color.DarkTurquoise;
+            frmTotal frm = new frmTotal();
+            openChildForm(frm);
+        }
+        private void resetBtn()
+        {
+            btnListAccount.BackColor = Color.FromArgb(0, 64, 64);
+            btnTotalBlog.BackColor = Color.FromArgb(0, 64, 64);
+        }
+
         bool close = false;
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -57,27 +72,14 @@ namespace Assignment_PRN_Team
             {
                 close = true;
                 this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
                 this.Close();
             }
             else
             {
                 close = false;
             }
-
         }
-
-        private void frmUser_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (close == false)
-            {
-                close = true;
-                DialogResult result;
-                result = MessageBox.Show("Are you sure?", "Exit Form", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes) { Application.Exit(); }
-                else { e.Cancel = true; close = false; }
-            }
-
-        }
-
     }
 }

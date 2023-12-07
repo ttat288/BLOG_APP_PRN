@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             topbarMenu = new System.Windows.Forms.Panel();
+            label1 = new System.Windows.Forms.Label();
             sidebarMenu = new System.Windows.Forms.Panel();
             btnApprove = new System.Windows.Forms.Button();
             btnMyBlog = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             panel8 = new System.Windows.Forms.Panel();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             panelUC = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
             topbarMenu.SuspendLayout();
             sidebarMenu.SuspendLayout();
             panel1.SuspendLayout();
@@ -61,6 +61,17 @@
             topbarMenu.Size = new System.Drawing.Size(1198, 38);
             topbarMenu.TabIndex = 6;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            label1.Location = new System.Drawing.Point(534, -2);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(110, 44);
+            label1.TabIndex = 4;
+            label1.Text = "BLOG";
+            // 
             // sidebarMenu
             // 
             sidebarMenu.BackColor = System.Drawing.Color.FromArgb(0, 64, 64);
@@ -76,12 +87,13 @@
             sidebarMenu.MaximumSize = new System.Drawing.Size(210, 0);
             sidebarMenu.MinimumSize = new System.Drawing.Size(62, 0);
             sidebarMenu.Name = "sidebarMenu";
-            sidebarMenu.Size = new System.Drawing.Size(210, 554);
+            sidebarMenu.Size = new System.Drawing.Size(210, 629);
             sidebarMenu.TabIndex = 7;
             // 
             // btnApprove
             // 
             btnApprove.BackColor = System.Drawing.Color.Teal;
+            btnApprove.Cursor = System.Windows.Forms.Cursors.Hand;
             btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnApprove.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnApprove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -90,13 +102,14 @@
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new System.Drawing.Size(210, 46);
             btnApprove.TabIndex = 24;
-            btnApprove.Text = "Approve Blog";
+            btnApprove.Text = "Waiting Blog";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
             // 
             // btnMyBlog
             // 
             btnMyBlog.BackColor = System.Drawing.Color.Teal;
+            btnMyBlog.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMyBlog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnMyBlog.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnMyBlog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -112,11 +125,12 @@
             // btnLogout
             // 
             btnLogout.BackColor = System.Drawing.Color.Teal;
+            btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnLogout.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnLogout.Location = new System.Drawing.Point(0, 508);
+            btnLogout.Location = new System.Drawing.Point(0, 583);
             btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new System.Drawing.Size(210, 46);
@@ -128,6 +142,7 @@
             // btnNew
             // 
             btnNew.BackColor = System.Drawing.Color.Teal;
+            btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnNew.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -143,6 +158,7 @@
             // btnHome
             // 
             btnHome.BackColor = System.Drawing.Color.Teal;
+            btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnHome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -194,7 +210,7 @@
             avatar.Location = new System.Drawing.Point(69, 26);
             avatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             avatar.Name = "avatar";
-            avatar.Size = new System.Drawing.Size(66, 66);
+            avatar.Size = new System.Drawing.Size(57, 57);
             avatar.TabIndex = 0;
             avatar.TabStop = false;
             // 
@@ -218,28 +234,18 @@
             panelUC.Location = new System.Drawing.Point(210, 38);
             panelUC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panelUC.Name = "panelUC";
-            panelUC.Size = new System.Drawing.Size(988, 554);
+            panelUC.Size = new System.Drawing.Size(988, 629);
             panelUC.TabIndex = 8;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            label1.Location = new System.Drawing.Point(534, -2);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(110, 44);
-            label1.TabIndex = 4;
-            label1.Text = "BLOG";
             // 
             // frmUser
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1198, 592);
+            ClientSize = new System.Drawing.Size(1198, 667);
             Controls.Add(panelUC);
             Controls.Add(sidebarMenu);
             Controls.Add(topbarMenu);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             Name = "frmUser";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

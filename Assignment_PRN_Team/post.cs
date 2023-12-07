@@ -21,7 +21,7 @@ namespace BlogWinApp
         private frmPost ParentForm { get; set; }
         Account account;
         string msg;
-        public post(string postID, string coverImg, frmPost parentForm,string Msg)
+        public post(string postID, string coverImg, frmPost parentForm, string Msg)
         {
             InitializeComponent();
             account = userRepository.remember();
@@ -65,18 +65,22 @@ namespace BlogWinApp
         {
             string filePath = $"../../../../SECRET/Posts/{postid}.doc";
 
-            if (File.Exists(filePath) && File.Exists(coverImgPath))
+            DialogResult result = MessageBox.Show("Do you to delete this post?", "Delete post", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                DeleteFile(filePath, coverImgPath);
-                postRepository.DeletePost(postid);
-                MessageBox.Show("Bài post đã được xóa thành công.");
+                if (File.Exists(filePath) && File.Exists(coverImgPath))
+                {
+                    DeleteFile(filePath, coverImgPath);
+                    postRepository.DeletePost(postid);
+                    MessageBox.Show("Delete Successful!");
 
-                // Gọi phương thức trực tiếp từ đối tượng frmPost
-                ParentForm.reload("allpost");
-            }
-            else
-            {
-                MessageBox.Show($"File {filePath} or {coverImgPath} không tồn tại.");
+                    // Gọi phương thức trực tiếp từ đối tượng frmPost
+                    ParentForm.reload("allpost");
+                }
+                else
+                {
+                    MessageBox.Show($"File {filePath} or {coverImgPath} not exist.");
+                }
             }
         }
         static void DeleteFile(string filePath, string coverImgPath)
@@ -151,7 +155,7 @@ namespace BlogWinApp
         }
         private void btnApprove_Click(object sender, EventArgs e)
         {
-            
+
             DialogResult result = MessageBox.Show("Bạn có muốn duyệt bài này ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -170,7 +174,7 @@ namespace BlogWinApp
         private string _likes;
         private string _comments;
 
-        
+
 
         [Category("Custom Props")]
         public string Title

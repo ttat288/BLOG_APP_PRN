@@ -4,7 +4,6 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\x86
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\libpdfium.dylib
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\BlogWinApp.exe
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\appsettings.json
-D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\img\SE171871.jpg
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\BlogWinApp.deps.json
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\BlogWinApp.runtimeconfig.json
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\BlogWinApp.runtimeconfig.dev.json
@@ -46,6 +45,8 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Pat
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Patagames.Pdf.Wpf.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Patagames.Pdf.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\SkiaSharp.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\SunnyUI.dll
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\SunnyUI.Common.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
@@ -70,16 +71,17 @@ D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\Blo
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\bin\Debug\net5.0-windows\DataAccess.pdb
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.csproj.AssemblyReference.cache
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.comment.resources
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmAccount.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\Assignment_PRN_Team.frmAdmin.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmComment.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmEditor.resources
-D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\Assignment_PRN_Team.frmListAccount.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\Assignment_PRN_Team.frmLogin.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\Assignment_PRN_Team.frmNewBlog.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmPost.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmProfileAnotherPerson.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmReadDoc.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmRegister.resources
+D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.frmTotal.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\Assignment_PRN_Team.frmUser.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.post.resources
 D:\FPTU\Ki`_5\PRNN\BLOG_APP_PRN\Assignment_PRN_Team\obj\Debug\net5.0-windows\BlogWinApp.Properties.Resources.resources

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using BlogObject;
 using BlogObject.Models;
@@ -28,7 +30,7 @@ namespace DataAccess
         string Email, Pass, avatarOfUser, userID;
 
         //---Login
-        public bool Login(string mail, string pass,bool rem)
+        public string Login(string mail, string pass, bool rem)
         {
             using (var context = new BlogPrnContext())
             {
@@ -46,17 +48,17 @@ namespace DataAccess
                         Account.Instance.Pass = user.Password;
                         Account.Instance.Role = user.Role;
                         // Đăng nhập thành công
-                        return true;
+                        return user.Role;
                     }
                     else
                     {
-                        return false;
+                        return "error";
                     }
                 }
                 else
                 {
                     // tài khoản không tồn tại
-                    return false;
+                    return "error";
                 }
             }
         }
@@ -122,7 +124,77 @@ namespace DataAccess
                 return false;
             }
         }
+        public void DeleteUser(string userID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                // Kiểm tra xem người dùng có tồn tại không
+                var userToDelete = context.UserTbls.SingleOrDefault(u => u.UserId == userID);
 
+                if (userToDelete != null)
+                {
 
+                    LikeDAO.Instance.DeleteLikeByUserID(userID);
+                    CommentDAO.Instance.DeleteCommentByUserID(userID);
+
+                    // Delete all posts with this user
+                    List<PostTbl> list = context.PostTbls.Where(p => p.PostId.StartsWith(userID)).ToList();
+                    foreach (var post in list)
+                    {
+                        PostDAO.Instance.DeletePost(post.PostId);
+                    }
+
+                    // Delete this user
+                    deleteUser2(userID);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    // Xử lý khi không tìm thấy người dùng
+                    Debug.WriteLine("Người dùng không tồn tại");
+                }
+            }
+        }
+        public void deleteUser2(string userID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                var userToDelete = context.UserTbls.SingleOrDefault(u => u.UserId == userID);
+
+                context.UserTbls.Remove(userToDelete);
+                context.SaveChanges();
+            }
+        }
+
+        public List<UserTbl> GetAllUser()
+        {
+            using (var context = new BlogPrnContext())
+            {
+                return context.UserTbls.Where(u => u.Role != "admin").ToList();
+            }
+        }
+        public void UpdateUser(string userID, string role, string major)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                // Tìm người dùng cần cập nhật
+                var userToUpdate = context.UserTbls.SingleOrDefault(u => u.UserId == userID);
+
+                if (userToUpdate != null)
+                {
+                    // Cập nhật thông tin người dùng
+                    userToUpdate.Role = role;
+                    userToUpdate.Major = major;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    context.SaveChanges();
+                }
+                else
+                {
+                    // Xử lý khi không tìm thấy người dùng
+                    throw new Exception("Người dùng không tồn tại");
+                }
+            }
+        }
     }
 }

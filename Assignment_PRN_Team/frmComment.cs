@@ -47,7 +47,7 @@ namespace BlogWinApp
             {
                 if (comments[i].PostId.Trim() == postID.Trim())
                 {
-                    listItems[i] = new comment();
+                    listItems[i] = new comment(comments[i].UserId);
                     user = userRepository.user(comments[i].UserId);
                     listItems[i].Comment = comments[i].Comment;
                     listItems[i].Avatar = user.Avatar;

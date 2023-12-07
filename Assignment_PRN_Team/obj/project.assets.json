@@ -2,11 +2,11 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
-      "Aspose.Words/23.11.0": {
+      "Aspose.Words/23.12.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
-          "SkiaSharp": "2.88.3",
+          "SkiaSharp": "2.88.6",
           "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Text.Encoding.CodePages": "4.5.0"
@@ -720,30 +720,30 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.6": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.3",
-          "SkiaSharp.NativeAssets.macOS": "2.88.3"
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6"
         },
         "compile": {
-          "lib/net5.0/SkiaSharp.dll": {
+          "lib/netcoreapp3.1/SkiaSharp.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net5.0/SkiaSharp.dll": {
+          "lib/netcoreapp3.1/SkiaSharp.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/2.88.3": {
+      "SkiaSharp.NativeAssets.macOS/2.88.6": {
         "type": "package",
         "compile": {
-          "lib/net5.0/_._": {}
+          "lib/netcoreapp3.1/_._": {}
         },
         "runtime": {
-          "lib/net5.0/_._": {}
+          "lib/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
@@ -752,13 +752,13 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/2.88.3": {
+      "SkiaSharp.NativeAssets.Win32/2.88.6": {
         "type": "package",
         "compile": {
-          "lib/net5.0/_._": {}
+          "lib/netcoreapp3.1/_._": {}
         },
         "runtime": {
-          "lib/net5.0/_._": {}
+          "lib/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
@@ -773,6 +773,30 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "SunnyUI/3.1.9": {
+        "type": "package",
+        "dependencies": {
+          "SunnyUI.Common": "3.1.2"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/SunnyUI.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/SunnyUI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "SunnyUI.Common/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/SunnyUI.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/SunnyUI.Common.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -1994,10 +2018,10 @@
     }
   },
   "libraries": {
-    "Aspose.Words/23.11.0": {
-      "sha512": "DBNsdf0vpLl0ThsF2jyZKRd1z84FOVLen8xvFRD4Zqbkc9RCI4rqlO2LHfZ6S2BKisDI1Hz2kXnB7/izDYmOug==",
+    "Aspose.Words/23.12.0": {
+      "sha512": "sP2q51kE81r/M8sBqKS9QEalwvP8uuYAJj0uhF9lZCJj3EbzkpjDY/hrniSwEvgKknesrlbxlghAfTxajep3SA==",
       "type": "package",
-      "path": "aspose.words/23.11.0",
+      "path": "aspose.words/23.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2005,7 +2029,7 @@
         "Images/aspose_words-for-net.png",
         "License/Aspose_End-User-License-Agreement.txt",
         "License/thirdpartylicenses-Aspose.Words for .NET.pdf",
-        "aspose.words.23.11.0.nupkg.sha512",
+        "aspose.words.23.12.0.nupkg.sha512",
         "aspose.words.nuspec",
         "lib/net40-client/Aspose.Words.dll",
         "lib/net40-client/Aspose.Words.xml",
@@ -3062,10 +3086,10 @@
         "runtime.native.system.nuspec"
       ]
     },
-    "SkiaSharp/2.88.3": {
-      "sha512": "GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
+    "SkiaSharp/2.88.6": {
+      "sha512": "wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
       "type": "package",
-      "path": "skiasharp/2.88.3",
+      "path": "skiasharp/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3078,9 +3102,6 @@
         "lib/net462/SkiaSharp.dll",
         "lib/net462/SkiaSharp.pdb",
         "lib/net462/SkiaSharp.xml",
-        "lib/net5.0/SkiaSharp.dll",
-        "lib/net5.0/SkiaSharp.pdb",
-        "lib/net5.0/SkiaSharp.xml",
         "lib/net6.0-android30.0/SkiaSharp.dll",
         "lib/net6.0-android30.0/SkiaSharp.pdb",
         "lib/net6.0-android30.0/SkiaSharp.xml",
@@ -3135,14 +3156,14 @@
         "lib/xamarinwatchos1.0/SkiaSharp.dll",
         "lib/xamarinwatchos1.0/SkiaSharp.pdb",
         "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "skiasharp.2.88.3.nupkg.sha512",
+        "skiasharp.2.88.6.nupkg.sha512",
         "skiasharp.nuspec"
       ]
     },
-    "SkiaSharp.NativeAssets.macOS/2.88.3": {
-      "sha512": "CEbWAXMGFkPV3S1snBKK7jEG3+xud/9kmSAhu0BEUKKtlMdxx+Qal0U9bntQREM9QpqP5xLWZooodi8IlV8MEg==",
+    "SkiaSharp.NativeAssets.macOS/2.88.6": {
+      "sha512": "Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
       "type": "package",
-      "path": "skiasharp.nativeassets.macos/2.88.3",
+      "path": "skiasharp.nativeassets.macos/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3155,20 +3176,20 @@
         "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
         "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
         "lib/net462/_._",
-        "lib/net5.0/_._",
         "lib/net6.0-macos10.15/_._",
+        "lib/net6.0/_._",
         "lib/netcoreapp3.1/_._",
         "lib/netstandard1.3/_._",
         "lib/xamarinmac2.0/_._",
         "runtimes/osx/native/libSkiaSharp.dylib",
-        "skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
+        "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
         "skiasharp.nativeassets.macos.nuspec"
       ]
     },
-    "SkiaSharp.NativeAssets.Win32/2.88.3": {
-      "sha512": "MU4ASL8VAbTv5vSw1PoiWjjjpjtGhWtFYuJnrN4sNHFCePb2ohQij9JhSdqLLxk7RpRtWPdV93fbA53Pt+J0yw==",
+    "SkiaSharp.NativeAssets.Win32/2.88.6": {
+      "sha512": "7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
       "type": "package",
-      "path": "skiasharp.nativeassets.win32/2.88.3",
+      "path": "skiasharp.nativeassets.win32/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3177,14 +3198,50 @@
         "build/net462/SkiaSharp.NativeAssets.Win32.targets",
         "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
         "lib/net462/_._",
-        "lib/net5.0/_._",
+        "lib/net6.0/_._",
         "lib/netcoreapp3.1/_._",
         "lib/netstandard1.3/_._",
         "runtimes/win-arm64/native/libSkiaSharp.dll",
         "runtimes/win-x64/native/libSkiaSharp.dll",
         "runtimes/win-x86/native/libSkiaSharp.dll",
-        "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
+        "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512",
         "skiasharp.nativeassets.win32.nuspec"
+      ]
+    },
+    "SunnyUI/3.1.9": {
+      "sha512": "iWeBhesF1oTo9niGt4mkV6YqEntmNuhkEl2LL78+uRZXBc5Dpd31zYr+zZIRAl2z8v+tqaRZCAsHcO37A6B/Gw==",
+      "type": "package",
+      "path": "sunnyui/3.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "SunnyUI.png",
+        "lib/net40/SunnyUI.dll",
+        "lib/net472/SunnyUI.dll",
+        "lib/net5.0-windows7.0/SunnyUI.dll",
+        "lib/net6.0-windows7.0/SunnyUI.dll",
+        "sunnyui.3.1.9.nupkg.sha512",
+        "sunnyui.nuspec"
+      ]
+    },
+    "SunnyUI.Common/3.1.2": {
+      "sha512": "+LnDUVRdSPgtVfsQEMCCCK1u/rQ3S0eRHgYGcb9qo+RBkx3xB8XvPJwSeHEZcAA1QGOkIM2tzVfW1HobVsLBpQ==",
+      "type": "package",
+      "path": "sunnyui.common/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "SunnyUI.png",
+        "lib/net40/SunnyUI.Common.dll",
+        "lib/net472/SunnyUI.Common.dll",
+        "lib/net5.0/SunnyUI.Common.dll",
+        "lib/net6.0/SunnyUI.Common.dll",
+        "lib/netcoreapp3.1/SunnyUI.Common.dll",
+        "lib/netstandard2.0/SunnyUI.Common.dll",
+        "lib/netstandard2.1/SunnyUI.Common.dll",
+        "sunnyui.common.3.1.2.nupkg.sha512",
+        "sunnyui.common.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -6706,12 +6763,13 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Aspose.Words >= 23.11.0",
+      "Aspose.Words >= 23.12.0",
       "BlogObject >= 1.0.0",
       "DataAccess >= 1.0.0",
       "FontAwesome.Sharp >= 6.1.1",
       "Krypton.Toolkit >= 70.22.11.312",
-      "Pdfium.Net.SDK >= 4.87.2704"
+      "Pdfium.Net.SDK >= 4.87.2704",
+      "SunnyUI >= 3.1.9"
     ]
   },
   "packageFolders": {
@@ -6762,7 +6820,7 @@
         "dependencies": {
           "Aspose.Words": {
             "target": "Package",
-            "version": "[23.11.0, )"
+            "version": "[23.12.0, )"
           },
           "FontAwesome.Sharp": {
             "target": "Package",
@@ -6775,6 +6833,10 @@
           "Pdfium.Net.SDK": {
             "target": "Package",
             "version": "[4.87.2704, )"
+          },
+          "SunnyUI": {
+            "target": "Package",
+            "version": "[3.1.9, )"
           }
         },
         "imports": [

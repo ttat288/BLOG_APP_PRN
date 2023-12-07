@@ -88,6 +88,7 @@ namespace BlogWinApp
             zoomDropDownButton = new ToolStripDropDownButton();
             toolStripSeparator12 = new ToolStripSeparator();
             toolStripButton1 = new ToolStripButton();
+            cancel = new ToolStripButton();
             openFileDialog1 = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
@@ -121,7 +122,6 @@ namespace BlogWinApp
             colorDialog1 = new ColorDialog();
             statusStrip1 = new StatusStrip();
             lineColumnStatusLabel = new ToolStripStatusLabel();
-            cancel = new ToolStripButton();
             richContextStrip.SuspendLayout();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -219,7 +219,7 @@ namespace BlogWinApp
             // 
             // toolStrip1
             // 
-            toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStrip1.ImageScalingSize = new Size(24, 24);
             toolStrip1.Items.AddRange(new ToolStripItem[] { saveStripButton, openFileStripButton, toolStripSeparator10, printStripButton, printPreviewStripButton, toolStripSeparator5, undoStripButton, redoStripButton, toolStripSeparator1, fontStripComboBox, fontSizeComboBox, increaseStripButton, decreaseStripButton, colorStripDropDownButton, changeCaseDropDownButton, toolStripSeparator9, clearFormattingStripButton, toolStripSeparator2, boldStripButton3, italicStripButton, underlineStripButton, toolStripSeparator3, leftAlignStripButton, centerAlignStripButton, rightAlignStripButton, toolStripSeparator4, bulletListStripButton, toolStripSeparator8, zoomDropDownButton, toolStripSeparator12, toolStripButton1, cancel });
             toolStrip1.Location = new Point(0, 32);
@@ -232,6 +232,7 @@ namespace BlogWinApp
             // 
             saveStripButton.BackgroundImageLayout = ImageLayout.Zoom;
             saveStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            saveStripButton.Enabled = false;
             saveStripButton.Image = Properties.Resources.floppy_disk__1_;
             saveStripButton.ImageTransparentColor = Color.Magenta;
             saveStripButton.Name = "saveStripButton";
@@ -242,6 +243,7 @@ namespace BlogWinApp
             // openFileStripButton
             // 
             openFileStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            openFileStripButton.Enabled = false;
             openFileStripButton.Image = Properties.Resources.open;
             openFileStripButton.ImageTransparentColor = Color.Magenta;
             openFileStripButton.Name = "openFileStripButton";
@@ -257,6 +259,7 @@ namespace BlogWinApp
             // printStripButton
             // 
             printStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            printStripButton.Enabled = false;
             printStripButton.Image = Properties.Resources.printer;
             printStripButton.ImageTransparentColor = Color.Magenta;
             printStripButton.Name = "printStripButton";
@@ -509,6 +512,19 @@ namespace BlogWinApp
             toolStripButton1.Text = "publish";
             toolStripButton1.Click += toolStripButton1_Click;
             // 
+            // cancel
+            // 
+            cancel.AutoSize = false;
+            cancel.BackColor = SystemColors.ButtonFace;
+            cancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            cancel.Image = Properties.Resources.man;
+            cancel.ImageTransparentColor = Color.Magenta;
+            cancel.Name = "cancel";
+            cancel.Overflow = ToolStripItemOverflow.Never;
+            cancel.Size = new Size(60, 28);
+            cancel.Text = "cancel";
+            cancel.Click += cancel_Click;
+            // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
@@ -516,7 +532,7 @@ namespace BlogWinApp
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.White;
-            menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, formatToolStripMenuItem });
             menuStrip1.Location = new Point(0, 8);
@@ -733,19 +749,6 @@ namespace BlogWinApp
             lineColumnStatusLabel.Size = new Size(995, 17);
             lineColumnStatusLabel.Spring = true;
             lineColumnStatusLabel.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // cancel
-            // 
-            cancel.AutoSize = false;
-            cancel.BackColor = SystemColors.ButtonFace;
-            cancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            cancel.Image = Properties.Resources.man;
-            cancel.ImageTransparentColor = Color.Magenta;
-            cancel.Name = "cancel";
-            cancel.Overflow = ToolStripItemOverflow.Never;
-            cancel.Size = new Size(60, 28);
-            cancel.Text = "cancel";
-            cancel.Click += cancel_Click;
             // 
             // frmEditor
             // 

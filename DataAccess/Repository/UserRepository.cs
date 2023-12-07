@@ -17,7 +17,17 @@ namespace DataAccess.Repository
             return UserDAO.Instance.CreateUser(newUser);
         }
 
-        public bool Login(string mail, string pass, bool rem)
+        public void DeleteUser(string userID)
+        {
+            UserDAO.Instance.DeleteUser(userID);
+        }
+
+        public List<UserTbl> GetAllUser()
+        {
+            return UserDAO.Instance.GetAllUser();
+        }
+
+        public string Login(string mail, string pass, bool rem)
         {
             return UserDAO.Instance.Login(mail, pass, rem);
         }
@@ -25,6 +35,11 @@ namespace DataAccess.Repository
         public Account remember()
         {
             return UserDAO.Instance.remember();
+        }
+
+        public void UpdateUser(string userID, string role, string major)
+        {
+            UserDAO.Instance.UpdateUser(userID, role, major);
         }
 
         public UserTbl user(string id)

@@ -94,6 +94,18 @@ namespace DataAccess
                 context.SaveChanges();
             }
         }
+        public void DeleteCommentByUserID(string userID)
+        {
+            using (var context = new BlogPrnContext())
+            {
+                var CmtsToDelete = context.CommentTbls.Where(u => u.UserId == userID).ToList();
+                foreach (var cmt in CmtsToDelete)
+                {
+                    context.CommentTbls.Remove(cmt);
+                }
+                context.SaveChanges();
+            }
+        }
 
 
 

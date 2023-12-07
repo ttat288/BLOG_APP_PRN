@@ -314,13 +314,13 @@ namespace BlogWinApp
 
         private void openFileStripButton_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();     // show the dialog
+            //openFileDialog1.ShowDialog();    
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filenamee = openFileDialog1.FileName;
                 // load the file into the richTextBox
-                richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.PlainText);    // loads it in regular text format
-                // richTextBox1.LoadFile(filename, RichTextBoxStreamType.RichText);    // loads it in RTB format
+                //richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.PlainText);    // loads it in regular text format
+                richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.RichText);    // loads it in RTB format
             }
         }
 

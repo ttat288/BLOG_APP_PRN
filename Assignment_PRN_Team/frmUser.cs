@@ -126,13 +126,13 @@ namespace Assignment_PRN_Team
 
         public void showPost(string msg)
         {
-            frmPost formPost = new frmPost(this,msg);
+            frmPost formPost = new frmPost(this, msg);
             rsBtn();
-            if(msg == "allpost")
+            if (msg == "allpost")
             {
-                    btnHome.BackColor = Color.DarkTurquoise;
+                btnHome.BackColor = Color.DarkTurquoise;
             }
-            if(msg == "approve")
+            if (msg == "approve")
             {
                 btnApprove.BackColor = Color.DarkTurquoise;
             }
@@ -185,7 +185,7 @@ namespace Assignment_PRN_Team
 
         private void btnMyBlog_Click(object sender, EventArgs e)
         {
-            frmPost formPost = new frmPost(this,account.id);
+            frmPost formPost = new frmPost(this, account.id);
             rsBtn();
             btnMyBlog.BackColor = Color.DarkTurquoise;
             openChildForm(formPost);

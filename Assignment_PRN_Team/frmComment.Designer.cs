@@ -41,18 +41,19 @@
             txtName.AutoSize = true;
             txtName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             txtName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtName.Location = new System.Drawing.Point(82, 592);
+            txtName.Location = new System.Drawing.Point(94, 789);
             txtName.Name = "txtName";
-            txtName.Size = new System.Drawing.Size(189, 20);
+            txtName.Size = new System.Drawing.Size(235, 25);
             txtName.TabIndex = 5;
             txtName.Text = "Name Name Name Name";
             // 
             // avatar
             // 
             avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            avatar.Location = new System.Drawing.Point(15, 596);
+            avatar.Location = new System.Drawing.Point(12, 803);
+            avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             avatar.Name = "avatar";
-            avatar.Size = new System.Drawing.Size(65, 68);
+            avatar.Size = new System.Drawing.Size(79, 75);
             avatar.TabIndex = 3;
             avatar.TabStop = false;
             // 
@@ -63,9 +64,10 @@
             btnComment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnComment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnComment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnComment.Location = new System.Drawing.Point(317, 668);
+            btnComment.Location = new System.Drawing.Point(362, 891);
+            btnComment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnComment.Name = "btnComment";
-            btnComment.Size = new System.Drawing.Size(132, 32);
+            btnComment.Size = new System.Drawing.Size(151, 43);
             btnComment.TabIndex = 6;
             btnComment.Text = "comment";
             btnComment.UseVisualStyleBackColor = false;
@@ -75,12 +77,13 @@
             // 
             txtComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtComment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtComment.Location = new System.Drawing.Point(86, 615);
+            txtComment.Location = new System.Drawing.Point(98, 820);
+            txtComment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtComment.MaxLength = 260;
             txtComment.Multiline = true;
             txtComment.Name = "txtComment";
             txtComment.PlaceholderText = "Enter comment";
-            txtComment.Size = new System.Drawing.Size(363, 49);
+            txtComment.Size = new System.Drawing.Size(415, 65);
             txtComment.TabIndex = 7;
             txtComment.TextChanged += txtComment_TextChanged;
             // 
@@ -88,22 +91,24 @@
             // 
             pnlComment.AutoScroll = true;
             pnlComment.Location = new System.Drawing.Point(0, 0);
+            pnlComment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pnlComment.Name = "pnlComment";
-            pnlComment.Size = new System.Drawing.Size(468, 590);
+            pnlComment.Size = new System.Drawing.Size(535, 787);
             pnlComment.TabIndex = 8;
             // 
             // frmComment
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Teal;
-            ClientSize = new System.Drawing.Size(467, 704);
+            ClientSize = new System.Drawing.Size(534, 939);
             Controls.Add(pnlComment);
             Controls.Add(txtComment);
             Controls.Add(btnComment);
             Controls.Add(txtName);
             Controls.Add(avatar);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "frmComment";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmComment";

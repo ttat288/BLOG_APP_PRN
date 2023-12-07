@@ -12,17 +12,25 @@ namespace BlogWinApp
 {
     public partial class comment : UserControl
     {
-        public comment()
+        string userID;
+        public comment(string id)
         {
             InitializeComponent();
+            userID = id;
         }
 
-
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            frmProfileAnotherPerson frm = new frmProfileAnotherPerson(userID);
+            frm.ShowDialog();
+        }
 
         #region Properties_Comment
         private string avt;
         private string name;
         private string _comment;
+
+        
 
         [Category("Custom comments")]
         public string Name
